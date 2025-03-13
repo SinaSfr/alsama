@@ -19,6 +19,9 @@
         <path d="M19 12L5 12M5 12L11 18M5 12L11 6" stroke="#52525B" stroke-width="1.5" stroke-linecap="round"
             stroke-linejoin="round" />
     </symbol>
+    <symbol id="icon-chevron-left-white" viewBox="0 0 24 24" fill="none">
+<path d="M19 12L5 12M5 12L11 18M5 12L11 6" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+    </symbol>
 
     <symbol id="icon-fire" viewBox="0 0 44 46" fill="none">
         <path fill-rule="evenodd" clip-rule="evenodd"
@@ -117,13 +120,13 @@
             fill="#27272A" />
     </symbol>
 
-    <symbol id="icon-black-shadow" viewBox="0 0 226 138" fill="none">
+    <symbol preserveAspectRatio="none" id="icon-black-shadow" viewBox="0 0 226 138" fill="none">
         <path
             d="M-0.902577 32.28C-0.902577 32.28 -5.6763 14.6208 51.6083 2.25972C108.893 -10.1014 259 32.28 259 32.28V140H-0.902577V32.28Z"
             fill="black" fill-opacity="0.6" />
     </symbol>
 
-    <symbol id="icon-blue-shadow" viewBox="0 0 247 146" fill="none">
+    <symbol preserveAspectRatio="none" id="icon-blue-shadow" viewBox="0 0 247 146" fill="none">
         <path
             d="M-11.5064 29.6098C-11.5064 29.6098 -14.6289 8.47646 50.6213 0.855339C115.872 -6.76579 277.589 60.3551 277.589 60.3551L264.246 185.822L-24.8498 155.077L-11.5064 29.6098Z"
             fill="#004466" fill-opacity="0.6" />
@@ -137,5 +140,19 @@
 
         <symbol id="icon-dash-border" viewBox="0 0 31 1" fill="none">
             <line y1="0.5" x2="31" y2="0.5" stroke="#A1A1AA" stroke-dasharray="2 2"/>
+    </symbol>
+
+    <symbol id="icon-clock" viewBox="0 0 24 24" fill="none">
+<path fill-rule="evenodd" clip-rule="evenodd" d="M21.5 12C21.5 17.109 17.359 21.25 12.25 21.25C7.141 21.25 3 17.109 3 12C3 6.891 7.141 2.75 12.25 2.75C17.359 2.75 21.5 6.891 21.5 12Z" stroke="#18181B" stroke-width="1.5" stroke-linecap="square"/>
+<path d="M15.6821 14.9437L11.9121 12.6947V7.84766" stroke="#18181B" stroke-width="1.5" stroke-linecap="square"/>
+    </symbol>
+
+    <symbol id="icon-magazine-calender" viewBox="0 0 24 24" fill="none">
+<path d="M4.4873 10.668H20.5288" stroke="#18181B" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M16.1426 3V5.96174" stroke="#18181B" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M8.87207 3V5.96174" stroke="#18181B" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M16.3184 4.42188H8.69804C6.05446 4.42188 4.4043 5.89399 4.4043 8.59984V16.7456C4.4043 19.4943 6.05446 21.0004 8.69804 21.0004H16.3106C18.962 21.0004 20.6044 19.5205 20.6044 16.8137V8.59984C20.6121 5.89399 18.9698 4.42188 16.3184 4.42188Z" stroke="#18181B" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M11.7793 15.5039H16.6218" stroke="#18181B" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M8.39551 15.5039H8.80903" stroke="#18181B" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
     </symbol>
 </svg>

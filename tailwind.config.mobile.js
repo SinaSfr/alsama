@@ -9,7 +9,7 @@ module.exports = {
         defaultBg: "var(--default-bg)",
         tourListBg: "var(--tourlist-bg)",
         articleListBg: "var(--articlelist-bg)",
-        footerBg: "var(--footer-bg)",
+        hotelListBg: "var(--hotellist-bg)",
       },
       colors: {
         primary: {

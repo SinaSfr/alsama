@@ -34,7 +34,7 @@
   --secondary-900: #674F0F;
   --secondary-950: #553F04;
 
-  --special-1: #00000066;
+  --special-1: #00000033;
   --special-2: #ffffff33;
 
 
@@ -42,7 +42,7 @@
   --default-bg: url("../images/default-back.jpg");
   --tourlist-bg: url("../images/tour-list-back.jpg");
   --articlelist-bg: url("../images/article-list-back.jpg");
-  --footer-bg: url("../images/footer-back.jpg");
+  --hotellist-bg: url("../images/hotel-list-back.png");
 }
 
 @font-face {
@@ -67,9 +67,24 @@
   src: url("../fonts/Dana-Bold.ttf") format("truetype");
 }
 
-.primary-one{
-    background: linear-gradient(270deg, #FF3535 3.33%, #CF1919 100%);
+.text-gradient {
+  background: linear-gradient(270deg, #FF3535 3.33%, #CF1919 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
-.primary-two{
-    color: #FF1A1A;
+.text-gradient-hover:hover {
+  background: linear-gradient(270deg, #FF3535 3.33%, #CF1919 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  transition: all 300ms ease;
+}
+
+.swiper-best-hotel-mobile .swiper-pagination-bullet-active {
+  background-color: #3469B4;
+}
+
+.swiper-best-hotel-mobile .swiper-pagination-bullet {
+  width: 9px;
+  height: 9px;
+  margin: 0 2px !important;
 }
