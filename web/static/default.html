@@ -11,17 +11,18 @@
 
 <body>
     <main>
-        <section class="relative bg-defaultBg bg-center bg-cover py-10">
-          <div class="bg-specialcolor-1 absolute inset-0 w-full h-full"></div>
-            <div class="mx-auto max-lg:w-[90%] max-xl:w-[97%] xl:max-w-7xl">
-                <h3 class="text-white font-medium">Have a great</h3>
-                <h2 class="text-white font-bold text-xl">travel experience.</h2>
-                <div
-                    class="text-white text-sm rounded-lg bg-[linear-gradient(270deg,_#FF3535_3.33%,_#CF1919_100%)] flex justify-center py-2 mt-2 mb-8">
-                    20% discount until the end of the month.</div>
-                    <div>
+        <section class="relative bg-defaultBg bg-cover py-36">
+            <div class="bg-specialcolor-1 absolute inset-0 w-full h-full"></div>
+            <div class="relative z-10 flex gap-12 mx-auto max-lg:w-[90%] max-xl:w-[97%] xl:max-w-7xl">
+                <div class="flex flex-1 flex-col">
+                    <h3 class="text-white text-[64px] leading-[64px]">Have a great</h3>
+                    <h2 class="text-white font-bold text-[64px] leading-[68px]">travel experience.</h2>
+                    <div
+                        class="text-white text-sm rounded-lg self-start bg-[linear-gradient(270deg,_#FF3535_3.33%,_#CF1919_100%)] flex justify-center p-2 mt-14">
+                        20% discount until the end of the month.</div>
+                </div>
                         <!-- search engine  -->
-        <div class="relative z-10  flex bg-white rounded-lg search-box search-box-container en">
+        <div class="relative z-10 flex flex-[1.33] bg-white rounded-lg search-box search-box-container en">
           <div
             class="hidden select h-16 p-1.5 float-left rounded-[42px] bg-white mb-5 max-xl:mb-20 max-xl:rounded-[15px] max-xl:w-full">
             <ul
@@ -32,19 +33,19 @@
               </li>
             </ul>
           </div>
-          <div class="relative z-20 w-full py-4 px-2     search-box-shadow">
+          <div class="relative z-20 w-full py-4 px-2 search-box-shadow">
             <div class=" r-hotel dir-ltr" id="Hotel">
-              <form class="relative flex flex-col items-center w-full frm form-search en" method="post"
+              <form class="relative flex flex-wrap w-full frm form-search en" method="post"
                 data-form="hotel" action="/Tem3_Hotel_Search_EN.bc" id="hotelsearch"
                 onsubmit="form_search_isSubmited(this,event)">
                 <input type="hidden" name="persiancurrent" class="persiancurrent" value="" aria-label="persiancurrent">
-                <div class="relative flex-1 cursor-pointer city box_city max-xl:w-full ">
+                <div class="relative cursor-pointer city box_city flex-1 basis-full">
                   <div class="inner-city h-14">
                     <div onclick="empty_value(this)" class="relative h-full click-content">
                         <span class="border border-solid border-zinc-900 absolute left-0 h-[90%] w-px"></span>
                         <span class="w-2 h-2 rounded-full bg-zinc-900 absolute left-[-3px] top-[-2px] z-10"></span>
                       <div class="relative flex flex-col ml-3">
-                        <label class="flex float-right text-base text-fourth" for="departure2">
+                        <label class="flex float-right text-base text-fourth cursor-pointer" for="departure2">
                         
                               <span class="text-zinc-400 font-medium">Destination</span>
                             </label>
@@ -52,7 +53,7 @@
                                 <img src="https://cdn.basiscore.net/maetravel.com/images/bed-search.svg" alt="bed">
                               </div>
                         <input type="text" aria-label="city" value=""
-                          class="relative float-left w-full leading-6 bg-white border-b border-solid border-zinc-200 outline-none placeholder:text-zinc-800 pb-1 mt-2 text-zinc-800 h-5 text-value text-fourth departure"
+                          class="relative float-left w-full leading-6 cursor-pointer bg-white border-b border-solid border-zinc-200 outline-none placeholder:text-zinc-800 pb-1 mt-2 text-zinc-800 h-5 text-value text-fourth departure"
                           id="departure2" name="coHotel" autocomplete="off" required="" placeholder="Select">
                         <input value="1182289" class="co-id from" type="hidden" name="cityid" aria-label="cityid">
                       </div>
@@ -312,14 +313,14 @@
                     </div>
                   </div>
                 </div>
-                <div class="flex flex-1 gap-8 justify-between mt-6 Basis_Date_Box max-xl:w-full ">
+                <div class="flex flex-1 gap-8 mr-6 justify-between mt-6 Basis_Date_Box basis-1/2">
                   <div class="relative float-left cursor-pointer city date-city">
                     <div class="flex flex-col overflow-hidden inner-city">
-                      <label class="flex float-right text-base text-fourth" for="fromdate2">
+                      <label class="flex float-right text-base text-fourth cursor-pointer" for="fromdate2">
                       <span class="text-zinc-400 font-medium">Departure</span>
                       </label>
                       <input type="text" aria-label="check out" value="" placeholder="Select"
-                        class="relative float-right h-5 w-full leading-6 text-left bg-white border-b border-solid border-zinc-200 outline-none placeholder:text-zinc-800 text-zinc-800 Basis_Date start_date sp-start text-fourth"
+                        class="relative float-right h-5 w-full leading-6 cursor-pointer text-left bg-white border-b border-solid border-zinc-200 outline-none placeholder:text-zinc-800 text-zinc-800 Basis_Date start_date sp-start text-fourth"
                         id="fromdate2" onclick="Basis_Calendar(this,'[##cms.cms.date##]', 1)" data-active="0" data-cache="0"
                         readonly="" name="fdate" required>
                       <input value="" class="mstring_date mstring_fdate" type="hidden" name="mstring_fdate"
@@ -328,11 +329,11 @@
                   </div>
                   <div class="relative float-left cursor-pointer city date-city">
                     <div class="flex flex-col overflow-hidden inner-city">
-                      <label class="flex float-right text-base text-fourth" for="fromdate2">
+                      <label class="flex float-right text-base text-fourth cursor-pointer" for="fromdate2">
                         <span class="text-zinc-400 font-medium">Arrival</span>
                         </label>
                       <input type="text" aria-label="Check out" value="" placeholder="Select"
-                        class="relative float-right w-full h-5 leading-6 text-left bg-white border-b border-solid border-zinc-200 outline-none placeholder:text-zinc-800 text-zinc-800 Basis_Date end_date sp-end nextCalOpening text-fourth"
+                        class="relative float-right w-full h-5 leading-6 cursor-pointer text-left bg-white border-b border-solid border-zinc-200 outline-none placeholder:text-zinc-800 text-zinc-800 Basis_Date end_date sp-end nextCalOpening text-fourth"
                         onclick="Basis_Calendar(this,'[##cms.cms.date##]', 1)" data-active="0" data-cache="0" readonly=""
                         name="tdate" required="" id="inp2-hotel">
                       <input value="" class="mstring_date mstring_tdate" type="hidden" name="mstring_tdate"
@@ -342,7 +343,7 @@
                   <div class="clr absolute"></div>
                 </div>
         
-                <div class="relative flex-1 w-full cursor-pointer city pass-box mt-6">
+                <div class="relative flex-1 cursor-pointer city pass-box mt-6 basis-[46%]">
                   <div class="flex flex-col justify-center inner-city">
                     <label class="flex float-left text-fourth" for="passenger2">
                      <span class="text-zinc-400 font-medium">Rooms, Passengers</span>
@@ -455,7 +456,7 @@
         
                
                   <button type="submit"
-                    class="flex items-center justify-center w-full mt-6 text-sm text-white rounded-lg cursor-pointer submit search-flight bg-primary-800 h-14">
+                    class="flex items-center justify-center w-40 mt-4 text-sm text-white rounded-lg cursor-pointer submit search-flight bg-primary-800 h-14">
                     Search
                    </button>
               
@@ -465,25 +466,151 @@
         </div>
       <!-- search engine  -->
                   </div>
-            </div>
+
 
         </section>
         <section class="mx-auto max-lg:w-[90%] max-xl:w-[97%] xl:max-w-7xl mt-20">
-            <div class="flex items-center gap-1 mb-6">
-                <svg width="44" height="46">
-                <use xlink:href="../assets/images/sprite-icons.svg#icon-fire"></use>
-            </svg>
-            <div>
-                <h2 class="font-medium text-gradient">Travel affordably with us</h2>
-                <h3 class="text-zinc-900 text-sm">Best hotel discounts</h3>
-            </div>
+            <div class="flex items-center justify-between">
+                <div class="flex items-center gap-1 mb-6">
+                    <svg width="44" height="46">
+                    <use xlink:href="../assets/images/sprite-icons.svg#icon-fire"></use>
+                </svg>
+                <div>
+                    <h2 class="font-bold text-gradient text-xl">Travel affordably with us</h2>
+                    <h3 class="text-zinc-900 text-sm">Best hotel discounts</h3>
+                </div>
+                </div>
+                <div class="flex items-center gap-2 mb-9 ">
+                    <div class="group swiper-button-prev-custom w-12 h-12 rounded-full bg-zinc-300 flex items-center justify-center transition-all duration-300 hover:bg-primary-900">
+                        <svg width="24" height="24" class="transition-all duration-300 group-hover:hidden group-hover:invisible group-hover:opacity-0">
+                            <use xlink:href="../assets/images/sprite-icons.svg#icon-chevron-left-zinc"></use>
+                            </svg>
+                            <svg width="24" height="24" class="hidden transition-all duration-300 invisible opacity-0 group-hover:visible group-hover:opacity-100 group-hover:block">
+                            <use xlink:href="../assets/images/sprite-icons.svg#icon-chevron-left-white"></use>
+                            </svg>
+                    </div>
+                    <div class="group swiper-button-next-custom w-12 h-12 rounded-full bg-zinc-300 flex items-center justify-center transition-all duration-300 hover:bg-primary-900">
+
+                    <svg width="24" height="24" class="transition-all duration-300 group-hover:hidden group-hover:invisible group-hover:opacity-0">
+                        <use xlink:href="../assets/images/sprite-icons.svg#icon-chevron-right-zinc"></use>
+                        </svg>
+                        <svg width="24" height="24" class="hidden transition-all duration-300 invisible opacity-0 group-hover:visible group-hover:opacity-100 group-hover:block">
+                        <use xlink:href="../assets/images/sprite-icons.svg#icon-chevron-right-white"></use>
+                        </svg>
+                    </div>
+                    </div>
             </div>
 
             <!-- Slider main container -->
-            <div class="swiper swiper-best-hotel-mobile pb-14">
+            <div class="swiper swiper-best-hotel pb-14">
                 <!-- Additional required wrapper -->
                 <div class="swiper-wrapper">
                     <!-- Slides -->
+                    <div class="swiper-slide">
+                        <div class="relative rounded-xl overflow-hidden">
+                            <img src="../assets/images/best-hotel-card.jpg" class="h-[278px] object-cover" alt=""
+                                width="100%" height="278">
+                            <svg preserveAspectRatio="none" width="226" height="138"
+                                class="absolute bottom-0 z-10 w-full">
+                                <use xlink:href="../assets/images/sprite-icons.svg#icon-black-shadow"></use>
+                            </svg>
+                            <svg width="247" height="146" class="absolute bottom-0 w-full">
+                                <use xlink:href="../assets/images/sprite-icons.svg#icon-blue-shadow"></use>
+                            </svg>
+                            <div preserveAspectRatio="none"
+                                class="absolute bottom-0 z-20 mb-2 w-[86%] mx-auto left-0 right-0">
+                                <h3 class="text-sm text-white">Hotel</h3>
+                                <h2 class="font-bold text-xl text-white">Ambassadeurs</h2>
+                                <div
+                                    class="text-white text-sm text-center rounded-[38px] py-1 w-16 bg-[linear-gradient(270deg,_#FF3535_3.33%,_#CF1919_100%)]">
+                                    30% off</div>
+                                <div class="flex items-center justify-between w-full">
+                                    <div class="flex items-center gap-1">
+                                        <span class="text-xs text-zinc-400">120$</span>
+                                        <span class="text-xl font-bold text-white">80$</span>
+                                    </div>
+                                    <a href=""
+                                        class="flex items-center justify-center w-12 h-12 rounded-full bg-primary-800">
+                                        <svg width="24" height="24">
+                                            <use
+                                                xlink:href="../assets/images/sprite-icons.svg#icon-chevron-right-white">
+                                            </use>
+                                        </svg>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="relative rounded-xl overflow-hidden">
+                            <img src="../assets/images/best-hotel-card.jpg" class="h-[278px] object-cover" alt=""
+                                width="100%" height="278">
+                            <svg preserveAspectRatio="none" width="226" height="138"
+                                class="absolute bottom-0 z-10 w-full">
+                                <use xlink:href="../assets/images/sprite-icons.svg#icon-black-shadow"></use>
+                            </svg>
+                            <svg width="247" height="146" class="absolute bottom-0 w-full">
+                                <use xlink:href="../assets/images/sprite-icons.svg#icon-blue-shadow"></use>
+                            </svg>
+                            <div preserveAspectRatio="none"
+                                class="absolute bottom-0 z-20 mb-2 w-[86%] mx-auto left-0 right-0">
+                                <h3 class="text-sm text-white">Hotel</h3>
+                                <h2 class="font-bold text-xl text-white">Ambassadeurs</h2>
+                                <div
+                                    class="text-white text-sm text-center rounded-[38px] py-1 w-16 bg-[linear-gradient(270deg,_#FF3535_3.33%,_#CF1919_100%)]">
+                                    30% off</div>
+                                <div class="flex items-center justify-between w-full">
+                                    <div class="flex items-center gap-1">
+                                        <span class="text-xs text-zinc-400">120$</span>
+                                        <span class="text-xl font-bold text-white">80$</span>
+                                    </div>
+                                    <a href=""
+                                        class="flex items-center justify-center w-12 h-12 rounded-full bg-primary-800">
+                                        <svg width="24" height="24">
+                                            <use
+                                                xlink:href="../assets/images/sprite-icons.svg#icon-chevron-right-white">
+                                            </use>
+                                        </svg>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="relative rounded-xl overflow-hidden">
+                            <img src="../assets/images/best-hotel-card.jpg" class="h-[278px] object-cover" alt=""
+                                width="100%" height="278">
+                            <svg preserveAspectRatio="none" width="226" height="138"
+                                class="absolute bottom-0 z-10 w-full">
+                                <use xlink:href="../assets/images/sprite-icons.svg#icon-black-shadow"></use>
+                            </svg>
+                            <svg width="247" height="146" class="absolute bottom-0 w-full">
+                                <use xlink:href="../assets/images/sprite-icons.svg#icon-blue-shadow"></use>
+                            </svg>
+                            <div preserveAspectRatio="none"
+                                class="absolute bottom-0 z-20 mb-2 w-[86%] mx-auto left-0 right-0">
+                                <h3 class="text-sm text-white">Hotel</h3>
+                                <h2 class="font-bold text-xl text-white">Ambassadeurs</h2>
+                                <div
+                                    class="text-white text-sm text-center rounded-[38px] py-1 w-16 bg-[linear-gradient(270deg,_#FF3535_3.33%,_#CF1919_100%)]">
+                                    30% off</div>
+                                <div class="flex items-center justify-between w-full">
+                                    <div class="flex items-center gap-1">
+                                        <span class="text-xs text-zinc-400">120$</span>
+                                        <span class="text-xl font-bold text-white">80$</span>
+                                    </div>
+                                    <a href=""
+                                        class="flex items-center justify-center w-12 h-12 rounded-full bg-primary-800">
+                                        <svg width="24" height="24">
+                                            <use
+                                                xlink:href="../assets/images/sprite-icons.svg#icon-chevron-right-white">
+                                            </use>
+                                        </svg>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                     <div class="swiper-slide">
                         <div class="relative rounded-xl overflow-hidden">
                             <img src="../assets/images/best-hotel-card.jpg" class="h-[278px] object-cover" alt=""
@@ -595,8 +722,8 @@
             </div>
         </section>
 
-        <section class="mx-auto max-lg:w-[90%] max-xl:w-[97%] xl:max-w-7xl mt-8">
-            <div class="flex flex-col gap-9">
+        <section class="mx-auto max-lg:w-[90%] max-xl:w-[97%] xl:max-w-7xl mt-24">
+            <div class="flex gap-20">
                 <div class="flex flex-col items-center">
                     <svg width="82" height="82">
                         <use xlink:href="../assets/images/sprite-icons.svg#icon-headphone"></use>
@@ -632,21 +759,178 @@
                 </div>
             </div>
         </section>
-        <section class="bg-zinc-100 pt-2 pb-3 mt-9">
-            <div class="mx-auto max-lg:w-[90%] max-xl:w-[97%] xl:max-w-7xl">
-                <h2 class="text-zinc-700 font-bold">Where would you like to travel?</h2>
-                <h3 class="text-zinc-900 text-sm">Choose the destination</h3>
-                <div class="relative flex items-center justify-between right-0 text-primary-900 menu-button mt-3">
-                    select city
-                    <svg width="48" height="48">
-                        <use xlink:href="../assets/images/sprite-icons.svg#icon-blue-dropdown"></use>
-                    </svg>
-                    <ul class="absolute left-0 z-40 w-full px-4 py-2 top-12 
-                    bg-white shadow-lg transition-all duration-300 transform scale-y-0 origin-top menu-dropdown">
-                        <li>gg</li>
-                    </ul>
+        <section class="mx-auto max-lg:w-[90%] max-xl:w-[97%] xl:max-w-7xl mt-20">
+            <div class="flex items-center justify-between">
+                <div class="flex items-center gap-1 mb-6">
+                    <svg width="44" height="46">
+                    <use xlink:href="../assets/images/sprite-icons.svg#icon-heart"></use>
+                </svg>
+                <div>
+                    <h2 class="font-bold text-gradient text-xl">popular destinations</h2>
+                    <h3 class="text-zinc-900 text-sm">Best hotel discounts</h3>
                 </div>
-                <ul class="flex items-center gap-2 border-t border-zinc-300 pt-3 mt-3 mb-3 overflow-x-auto whitespace-nowrap scrollbar-thin">
+                </div>
+                <div class="flex items-center gap-2 mb-9 ">
+                    <div class="group swiper-button-prev-custom w-12 h-12 rounded-full bg-zinc-300 flex items-center justify-center transition-all duration-300 hover:bg-primary-900">
+                        <svg width="24" height="24" class="transition-all duration-300 group-hover:hidden group-hover:invisible group-hover:opacity-0">
+                            <use xlink:href="../assets/images/sprite-icons.svg#icon-chevron-left-zinc"></use>
+                            </svg>
+                            <svg width="24" height="24" class="hidden transition-all duration-300 invisible opacity-0 group-hover:visible group-hover:opacity-100 group-hover:block">
+                            <use xlink:href="../assets/images/sprite-icons.svg#icon-chevron-left-white"></use>
+                            </svg>
+                    </div>
+                    <div class="group swiper-button-next-custom w-12 h-12 rounded-full bg-zinc-300 flex items-center justify-center transition-all duration-300 hover:bg-primary-900">
+
+                    <svg width="24" height="24" class="transition-all duration-300 group-hover:hidden group-hover:invisible group-hover:opacity-0">
+                        <use xlink:href="../assets/images/sprite-icons.svg#icon-chevron-right-zinc"></use>
+                        </svg>
+                        <svg width="24" height="24" class="hidden transition-all duration-300 invisible opacity-0 group-hover:visible group-hover:opacity-100 group-hover:block">
+                        <use xlink:href="../assets/images/sprite-icons.svg#icon-chevron-right-white"></use>
+                        </svg>
+                    </div>
+                    </div>
+            </div>
+
+            <!-- Slider main container -->
+            <div class="swiper swiper-popular-destination pb-14">
+                <!-- Additional required wrapper -->
+                <div class="swiper-wrapper">
+                    <!-- Slides -->
+                    <div class="swiper-slide">
+                        <div class="relative rounded-xl overflow-hidden">
+                            <div class="bg-specialcolor-3 absolute inset-0 w-full h-full"></div>
+                            <img src="../assets/images/popular-destination-card.jpg" class="h-60 object-cover" alt="" width="100%" height="236" loading="lazy">
+                            <div class="absolute inset-0 mx-auto w-[90%] top-4">
+                                <div class="text-white text-sm text-center rounded-[38px] py-1 w-20 bg-[linear-gradient(270deg,_#FF3535_3.33%,_#CF1919_100%)]">
+                                    30% off</div>
+                                    <div class="mt-32 flex items-center justify-between">
+                                        <div>
+                                            <h3 class="text-sm text-white mb-1">Travel</h3>
+                                            <h2 class="text-white font-bold text-2xl">istanbul</h2>
+                                            </div>
+                                            <a href="" class="flex items-center justify-center w-12 h-12 rounded-full bg-primary-800">
+                                                <svg width="24" height="24">
+                                                    <use xlink:href="../assets/images/sprite-icons.svg#icon-chevron-right-white">
+                                                    </use>
+                                                </svg>
+                                            </a>
+                                    </div>
+                                </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="relative rounded-xl overflow-hidden">
+                            <div class="bg-specialcolor-3 absolute inset-0 w-full h-full"></div>
+                            <img src="../assets/images/popular-destination-card.jpg" class="h-60 object-cover" alt="" width="100%" height="236" loading="lazy">
+                            <div class="absolute inset-0 mx-auto w-[90%] top-4">
+                                <div class="text-white text-sm text-center rounded-[38px] py-1 w-20 bg-[linear-gradient(270deg,_#FF3535_3.33%,_#CF1919_100%)]">
+                                    30% off</div>
+                                    <div class="mt-32 flex items-center justify-between">
+                                        <div>
+                                            <h3 class="text-sm text-white mb-1">Travel</h3>
+                                            <h2 class="text-white font-bold text-2xl">istanbul</h2>
+                                            </div>
+                                            <a href="" class="flex items-center justify-center w-12 h-12 rounded-full bg-primary-800">
+                                                <svg width="24" height="24">
+                                                    <use xlink:href="../assets/images/sprite-icons.svg#icon-chevron-right-white">
+                                                    </use>
+                                                </svg>
+                                            </a>
+                                    </div>
+                                </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="relative rounded-xl overflow-hidden">
+                            <div class="bg-specialcolor-3 absolute inset-0 w-full h-full"></div>
+                            <img src="../assets/images/popular-destination-card.jpg" class="h-60 object-cover" alt="" width="100%" height="236" loading="lazy">
+                            <div class="absolute inset-0 mx-auto w-[90%] top-4">
+                                <div class="text-white text-sm text-center rounded-[38px] py-1 w-20 bg-[linear-gradient(270deg,_#FF3535_3.33%,_#CF1919_100%)]">
+                                    30% off</div>
+                                    <div class="mt-32 flex items-center justify-between">
+                                        <div>
+                                            <h3 class="text-sm text-white mb-1">Travel</h3>
+                                            <h2 class="text-white font-bold text-2xl">istanbul</h2>
+                                            </div>
+                                            <a href="" class="flex items-center justify-center w-12 h-12 rounded-full bg-primary-800">
+                                                <svg width="24" height="24">
+                                                    <use xlink:href="../assets/images/sprite-icons.svg#icon-chevron-right-white">
+                                                    </use>
+                                                </svg>
+                                            </a>
+                                    </div>
+                                </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="relative rounded-xl overflow-hidden">
+                            <div class="bg-specialcolor-3 absolute inset-0 w-full h-full"></div>
+                            <img src="../assets/images/popular-destination-card.jpg" class="h-60 object-cover" alt="" width="100%" height="236" loading="lazy">
+                            <div class="absolute inset-0 mx-auto w-[90%] top-4">
+                                <div class="text-white text-sm text-center rounded-[38px] py-1 w-20 bg-[linear-gradient(270deg,_#FF3535_3.33%,_#CF1919_100%)]">
+                                    30% off</div>
+                                    <div class="mt-32 flex items-center justify-between">
+                                        <div>
+                                            <h3 class="text-sm text-white mb-1">Travel</h3>
+                                            <h2 class="text-white font-bold text-2xl">istanbul</h2>
+                                            </div>
+                                            <a href="" class="flex items-center justify-center w-12 h-12 rounded-full bg-primary-800">
+                                                <svg width="24" height="24">
+                                                    <use xlink:href="../assets/images/sprite-icons.svg#icon-chevron-right-white">
+                                                    </use>
+                                                </svg>
+                                            </a>
+                                    </div>
+                                </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="relative rounded-xl overflow-hidden">
+                            <div class="bg-specialcolor-3 absolute inset-0 w-full h-full"></div>
+                            <img src="../assets/images/popular-destination-card.jpg" class="h-60 object-cover" alt="" width="100%" height="236" loading="lazy">
+                            <div class="absolute inset-0 mx-auto w-[90%] top-4">
+                                <div class="text-white text-sm text-center rounded-[38px] py-1 w-20 bg-[linear-gradient(270deg,_#FF3535_3.33%,_#CF1919_100%)]">
+                                    30% off</div>
+                                    <div class="mt-32 flex items-center justify-between">
+                                        <div>
+                                            <h3 class="text-sm text-white mb-1">Travel</h3>
+                                            <h2 class="text-white font-bold text-2xl">istanbul</h2>
+                                            </div>
+                                            <a href="" class="flex items-center justify-center w-12 h-12 rounded-full bg-primary-800">
+                                                <svg width="24" height="24">
+                                                    <use xlink:href="../assets/images/sprite-icons.svg#icon-chevron-right-white">
+                                                    </use>
+                                                </svg>
+                                            </a>
+                                    </div>
+                                </div>
+                        </div>
+                    </div>
+
+                </div>
+                <!-- If we need pagination -->
+                <div class="swiper-pagination"></div>
+            </div>
+        </section>
+        <section class="bg-zinc-100 py-9 mt-24">
+            <div class="mx-auto max-lg:w-[90%] max-xl:w-[97%] xl:max-w-7xl">
+                <div class="flex items-center justify-between">
+                    <div>
+                        <h2 class="text-zinc-700 font-bold text-3xl">Where would you like to travel?</h2>
+                        <h3 class="text-zinc-900 text-sm">Choose the destination</h3>
+                    </div>
+                    <div class="relative cursor-pointer w-72 h-16 flex items-center justify-between border-b border-zinc-300 text-primary-900 menu-button">
+                        select city
+                        <svg width="48" height="48" class="blue-dropdown transition-all duration-300">
+                            <use xlink:href="../assets/images/sprite-icons.svg#icon-blue-dropdown"></use>
+                        </svg>
+                        <ul class="absolute left-0 z-40 w-full px-4 py-2 top-12 
+                        bg-white shadow-lg transition-all duration-300 transform scale-y-0 origin-top menu-dropdown">
+                            <li>gg</li>
+                        </ul>
+                    </div>
+                </div>
+                <ul class="flex items-center gap-2 mt-3 mb-6 overflow-x-auto whitespace-nowrap scrollbar-thin">
                     <li class="rounded-[50px] bg-white py-2 px-5 text-zinc-500 text-sm">Antalia</li>
                     <li class="rounded-[50px] bg-white py-2 px-5 text-zinc-500 text-sm">Antalia</li>
                     <li class="rounded-[50px] bg-white py-2 px-5 text-zinc-500 text-sm">Antalia</li>
@@ -654,7 +938,29 @@
                     <li class="rounded-[50px] bg-white py-2 px-5 text-zinc-500 text-sm">Antalia</li>
                     <li class="rounded-[50px] bg-white py-2 px-5 text-zinc-500 text-sm">Antalia</li>
                 </ul>
-                <div class="flex flex-col gap-3">
+                <div class="grid grid-cols-3 gap-x-10 gap-y-3">
+                    <div class="flex items-center gap-2">
+                        <div class="flex-1">
+                            <img src="../assets/images/default-back.jpg" class="h-32 object-cover rounded-lg" alt="" width="100%" height="128" loading="lazy">
+                        </div>
+                        <div class="flex-1">
+                            <h2 class="text-zinc-900 font-bold mb-2 text-xl">Dubai</h2>
+                            <div class="flex justify-between items-center mb-2">
+                                <span class="text-sm text-zinc-900">12 jun</span>
+                                <svg width="93" height="1">
+                                    <use xlink:href="../assets/images/sprite-icons.svg#icon-dash-border-desktop"></use>
+                                </svg>
+                                <span class="text-sm text-zinc-900">24 jun</span>
+                            </div>
+                            <img src="../assets/images/logo-airline.png" class="h-4 object-cover" alt="" width="56" height="14" loading="lazy">
+                            <div class="flex items-center justify-between">
+                                <span class="text-zinc-800 font-medium">200$</span>
+                                <svg width="48" height="48">
+                                    <use xlink:href="../assets/images/sprite-icons.svg#icon-chevron-right-blue"></use>
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
                     <div class="flex items-center gap-2">
                         <div class="flex-1">
                             <img src="../assets/images/default-back.jpg" class="h-32 object-cover rounded-lg" alt="" width="100%" height="128" loading="lazy">
@@ -677,86 +983,152 @@
                             </div>
                         </div>
                     </div>
-                    <a href="" class="text-blue-600 mt-3 text-center">Read more</a>
+                    <div class="flex items-center gap-2">
+                        <div class="flex-1">
+                            <img src="../assets/images/default-back.jpg" class="h-32 object-cover rounded-lg" alt="" width="100%" height="128" loading="lazy">
+                        </div>
+                        <div class="flex-1">
+                            <h2 class="text-zinc-900 font-medium mb-2">Dubai</h2>
+                            <div class="flex justify-between items-center mb-2">
+                                <span class="text-sm text-zinc-900">12 jun</span>
+                                <svg width="31" height="1">
+                                    <use xlink:href="../assets/images/sprite-icons.svg#icon-dash-border"></use>
+                                </svg>
+                                <span class="text-sm text-zinc-900">24 jun</span>
+                            </div>
+                            <img src="../assets/images/logo-airline.png" class="h-4 object-cover" alt="" width="56" height="14" loading="lazy">
+                            <div class="flex items-center justify-between">
+                                <span class="text-zinc-800 font-medium">200$</span>
+                                <svg width="48" height="48">
+                                    <use xlink:href="../assets/images/sprite-icons.svg#icon-chevron-right-blue"></use>
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
 
-        <section class="mx-auto max-lg:w-[90%] max-xl:w-[97%] xl:max-w-7xl mt-10">
-            <h2 class="font-bold text-zinc-900 text-xl">Travel magazine</h2>
-            <a href="" class="text-sm text-blue-600">View All blog</a>
+        <section class="mx-auto max-lg:w-[90%] max-xl:w-[97%] xl:max-w-7xl mt-24">
+            <div class="relative">
+                <img src="../assets/images/default-back.jpg" class="h-96 object-cover" alt="" width="100%" height="381" loading="lazy">
+                <div class="absolute">
+                    <h2 class="">Experience a deloghful</h2>
+                    <h3>summer</h3>
+                </div>
+            </div>
+        </section>
 
-            <div class="swiper swiper-travel-magazine-mobile pb-14 mt-4">
+        <section class="mx-auto max-lg:w-[90%] max-xl:w-[97%] xl:max-w-7xl mt-24">
+            <div class="flex items-center justify-between">
+                <div>
+                    <h2 class="font-bold text-zinc-900 text-xl">Travel magazine</h2>
+                    <a href="" class="text-sm text-blue-600">View All blog</a>
+                </div>
+                <div class="flex items-center gap-2 mb-9 ">
+                    <div class="group swiper-button-prev-custom w-12 h-12 rounded-full bg-zinc-300 flex items-center justify-center transition-all duration-300 hover:bg-primary-900">
+                        <svg width="24" height="24" class="transition-all duration-300 group-hover:hidden group-hover:invisible group-hover:opacity-0">
+                            <use xlink:href="../assets/images/sprite-icons.svg#icon-chevron-left-zinc"></use>
+                            </svg>
+                            <svg width="24" height="24" class="hidden transition-all duration-300 invisible opacity-0 group-hover:visible group-hover:opacity-100 group-hover:block">
+                            <use xlink:href="../assets/images/sprite-icons.svg#icon-chevron-left-white"></use>
+                            </svg>
+                    </div>
+                    <div class="group swiper-button-next-custom w-12 h-12 rounded-full bg-zinc-300 flex items-center justify-center transition-all duration-300 hover:bg-primary-900">
+    
+                    <svg width="24" height="24" class="transition-all duration-300 group-hover:hidden group-hover:invisible group-hover:opacity-0">
+                        <use xlink:href="../assets/images/sprite-icons.svg#icon-chevron-right-zinc"></use>
+                        </svg>
+                        <svg width="24" height="24" class="hidden transition-all duration-300 invisible opacity-0 group-hover:visible group-hover:opacity-100 group-hover:block">
+                        <use xlink:href="../assets/images/sprite-icons.svg#icon-chevron-right-white"></use>
+                        </svg>
+                    </div>
+                    </div>
+            </div>
+
+            <div class="swiper swiper-travel-magazine pb-14 mt-4">
                 <!-- Additional required wrapper -->
                 <div class="swiper-wrapper">
                     <!-- Slides -->
                     <div class="swiper-slide">
-                        <div class="flex flex-col gap-3">
-                            <img src="../assets/images/magazine-card.jpg" class="h-48 object-cover rounded-xl" alt="" width="100%" height="187" loading="lazy">
-                                <h2 class="text-zinc-900 font-medium">Round the world trip</h2>
-                                <div class="text-sm text-justify text-zinc-900">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Egestas purus viverra accumsan in nisl nisi. Arcu cursus vitae congue mauris rhoncus aenean vel elit scelerisque. In egestas erat imperdiet sed euismod nisi porta lorem mollis. Morbi tristique senectus et netus.</div>
-                                <div class="flex items-center gap-6">
-                                    <span class="flex items-center text-sm text-zinc-900 gap-2">
-                                        <svg width="24" height="24">
-                                            <use xlink:href="../assets/images/sprite-icons.svg#icon-magazine-calender"></use>
-                                        </svg>
-                                        20-03-2024
-                                    </span>
-            
-                                    <span class="flex items-center text-sm text-zinc-900 gap-2">
-                                        <svg width="24" height="24">
-                                            <use xlink:href="../assets/images/sprite-icons.svg#icon-clock"></use>
-                                        </svg>
-                                        2 Min
-                                    </span>
+                        <div class="flex items-center gap-8">
+                            <div class="flex-1">
+                                <img src="../assets/images/magazine-card.jpg" class="h-[345px] object-cover rounded-xl" alt="" width="100%" height="345" loading="lazy">
+                            </div>
+                                <div class="flex flex-col gap-3 flex-[1.17]">
+                                    <h2 class="text-zinc-900 font-bold text-2xl">Round the world trip</h2>
+                                    <div class="text-sm text-justify text-zinc-900">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Egestas purus viverra accumsan in nisl nisi. Arcu cursus vitae congue mauris rhoncus aenean vel elit scelerisque. In egestas erat imperdiet sed euismod nisi porta lorem mollis. Morbi tristique senectus et netus.</div>
+                                    <div class="flex items-center gap-6">
+                                        <span class="flex items-center text-sm text-zinc-900 gap-2">
+                                            <svg width="24" height="24">
+                                                <use xlink:href="../assets/images/sprite-icons.svg#icon-magazine-calender"></use>
+                                            </svg>
+                                            20-03-2024
+                                        </span>
+                
+                                        <span class="flex items-center text-sm text-zinc-900 gap-2">
+                                            <svg width="24" height="24">
+                                                <use xlink:href="../assets/images/sprite-icons.svg#icon-clock"></use>
+                                            </svg>
+                                            2 Min
+                                        </span>
+                                    </div>
+                                    <a href="" class="flex items-center justify-center bg-primary-800 rounded-lg text-white font-medium py-4 w-36">Read More</a>
                                 </div>
-                                <a href="" class="flex items-center justify-center bg-primary-800 rounded-lg text-white font-medium py-4 w-36   ">Read More</a>
                         </div>
                     </div>
                     <div class="swiper-slide">
-                        <div class="flex flex-col gap-3">
-                            <img src="../assets/images/magazine-card.jpg" class="h-48 object-cover" alt="" width="100%" height="187" loading="lazy">
-                                <h2 class="text-zinc-900 font-medium">Round the world trip</h2>
-                                <div class="text-sm text-justify text-zinc-900">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Egestas purus viverra accumsan in nisl nisi. Arcu cursus vitae congue mauris rhoncus aenean vel elit scelerisque. In egestas erat imperdiet sed euismod nisi porta lorem mollis. Morbi tristique senectus et netus.</div>
-                                <div class="flex items-center gap-6">
-                                    <span class="flex items-center text-sm text-zinc-900 gap-2">
-                                        <svg width="24" height="24">
-                                            <use xlink:href="../assets/images/sprite-icons.svg#icon-magazine-calender"></use>
-                                        </svg>
-                                        20-03-2024
-                                    </span>
-            
-                                    <span class="flex items-center text-sm text-zinc-900 gap-2">
-                                        <svg width="24" height="24">
-                                            <use xlink:href="../assets/images/sprite-icons.svg#icon-clock"></use>
-                                        </svg>
-                                        2 Min
-                                    </span>
+                        <div class="flex items-center gap-8">
+                            <div class="flex-1">
+                                <img src="../assets/images/magazine-card.jpg" class="h-[345px] object-cover rounded-xl" alt="" width="100%" height="345" loading="lazy">
+                            </div>
+                                <div class="flex flex-col gap-3 flex-[1.17]">
+                                    <h2 class="text-zinc-900 font-medium">Round the world trip</h2>
+                                    <div class="text-sm text-justify text-zinc-900">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Egestas purus viverra accumsan in nisl nisi. Arcu cursus vitae congue mauris rhoncus aenean vel elit scelerisque. In egestas erat imperdiet sed euismod nisi porta lorem mollis. Morbi tristique senectus et netus.</div>
+                                    <div class="flex items-center gap-6">
+                                        <span class="flex items-center text-sm text-zinc-900 gap-2">
+                                            <svg width="24" height="24">
+                                                <use xlink:href="../assets/images/sprite-icons.svg#icon-magazine-calender"></use>
+                                            </svg>
+                                            20-03-2024
+                                        </span>
+                
+                                        <span class="flex items-center text-sm text-zinc-900 gap-2">
+                                            <svg width="24" height="24">
+                                                <use xlink:href="../assets/images/sprite-icons.svg#icon-clock"></use>
+                                            </svg>
+                                            2 Min
+                                        </span>
+                                    </div>
+                                    <a href="" class="flex items-center justify-center bg-primary-800 rounded-lg text-white font-medium py-4 w-36   ">Read More</a>
                                 </div>
-                                <a href="" class="flex items-center justify-center bg-primary-800 rounded-lg text-white font-medium py-4 w-36   ">Read More</a>
                         </div>
                     </div>
                     <div class="swiper-slide">
-                        <div class="flex flex-col gap-3">
-                            <img src="../assets/images/magazine-card.jpg" class="h-48 object-cover" alt="" width="100%" height="187" loading="lazy">
-                                <h2 class="text-zinc-900 font-medium">Round the world trip</h2>
-                                <div class="text-sm text-justify text-zinc-900">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Egestas purus viverra accumsan in nisl nisi. Arcu cursus vitae congue mauris rhoncus aenean vel elit scelerisque. In egestas erat imperdiet sed euismod nisi porta lorem mollis. Morbi tristique senectus et netus.</div>
-                                <div class="flex items-center gap-6">
-                                    <span class="flex items-center text-sm text-zinc-900 gap-2">
-                                        <svg width="24" height="24">
-                                            <use xlink:href="../assets/images/sprite-icons.svg#icon-magazine-calender"></use>
-                                        </svg>
-                                        20-03-2024
-                                    </span>
-            
-                                    <span class="flex items-center text-sm text-zinc-900 gap-2">
-                                        <svg width="24" height="24">
-                                            <use xlink:href="../assets/images/sprite-icons.svg#icon-clock"></use>
-                                        </svg>
-                                        2 Min
-                                    </span>
+                        <div class="flex items-center gap-8">
+                            <div class="flex-1">
+                                <img src="../assets/images/magazine-card.jpg" class="h-[345px] object-cover rounded-xl" alt="" width="100%" height="345" loading="lazy">
+                            </div>
+                                <div class="flex flex-col gap-3 flex-[1.17]">
+                                    <h2 class="text-zinc-900 font-medium">Round the world trip</h2>
+                                    <div class="text-sm text-justify text-zinc-900">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Egestas purus viverra accumsan in nisl nisi. Arcu cursus vitae congue mauris rhoncus aenean vel elit scelerisque. In egestas erat imperdiet sed euismod nisi porta lorem mollis. Morbi tristique senectus et netus.</div>
+                                    <div class="flex items-center gap-6">
+                                        <span class="flex items-center text-sm text-zinc-900 gap-2">
+                                            <svg width="24" height="24">
+                                                <use xlink:href="../assets/images/sprite-icons.svg#icon-magazine-calender"></use>
+                                            </svg>
+                                            20-03-2024
+                                        </span>
+                
+                                        <span class="flex items-center text-sm text-zinc-900 gap-2">
+                                            <svg width="24" height="24">
+                                                <use xlink:href="../assets/images/sprite-icons.svg#icon-clock"></use>
+                                            </svg>
+                                            2 Min
+                                        </span>
+                                    </div>
+                                    <a href="" class="flex items-center justify-center bg-primary-800 rounded-lg text-white font-medium py-4 w-36   ">Read More</a>
                                 </div>
-                                <a href="" class="flex items-center justify-center bg-primary-800 rounded-lg text-white font-medium py-4 w-36   ">Read More</a>
                         </div>
                     </div>
                 </div>
@@ -765,7 +1137,7 @@
             </div>
         </section>
 
-        <section class="mx-auto max-lg:w-[90%] max-xl:w-[97%] xl:max-w-7xl mt-9 mb-6">
+        <section class="mx-auto max-lg:w-[90%] max-xl:w-[97%] xl:max-w-7xl my-24">
             <h2 class="text-xl font-bold text-zinc-900 mb-3">Our history</h2>
             <div class="text-zinc-900 text-sm text-justify">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Egestas purus viverra accumsan in nisl nisi. Arcu cursus vitae congue mauris rhoncus aenean vel elit scelerisque. In egestas erat imperdiet sed euismod nisi porta lorem mollis. Morbi tristique senectus et netus. Mattis pellentesque id nibh tortor id aliquet lectus proin. Sapien faucibus et molestie ac feugiat sed lectus vestibulum. Ullamcorper velit sed ullamcorper morbi tincidunt ornare massa eget. Dictum varius duis at consectetur lorem. Nisi vitae suscipit tellus mauris a diam maecenas sed enim. Velit ut tortor pretium viverra suspendisse potenti nullam. Et molestie ac feugiat sed lectus. Non nisi est sit amet facilisis magna. Dignissim diam quis enim lobortis scelerisque fermentum. Odio ut enim blandit volutpat maecenas volutpat. Ornare lectus sit amet est placerat in egestas erat.
@@ -780,8 +1152,8 @@
     <script src="../assets/js/alsama-search.js"></script>
     <script src="https://cdn.basiscore.net/basisfly.com/js/swiper-bundle.min.js"></script>
     <script>
-        var swiper = new Swiper(".swiper-best-hotel-mobile", {
-            slidesPerView: 1.3,
+        var swiperBestHotel = new Swiper(".swiper-best-hotel", {
+            slidesPerView: 5,
             speed: 400,
             centeredSlides: false,
             spaceBetween: 12,
@@ -795,8 +1167,32 @@
                 el: ".swiper-pagination",
                 clickable: true,
             },
+            navigation: {
+            nextEl: ".swiper-button-next-custom",
+            prevEl: ".swiper-button-prev-custom",
+            },
         });
-        var swiper = new Swiper(".swiper-travel-magazine-mobile", {
+        var swiperPopularDestination = new Swiper(".swiper-popular-destination", {
+            slidesPerView: 4,
+            speed: 400,
+            centeredSlides: false,
+            spaceBetween: 12,
+            grabCursor: true,
+            autoplay: {
+                delay: 2500,
+                disableOnInteraction: false,
+            },
+            loop: true,
+            pagination: {
+                el: ".swiper-pagination",
+                clickable: true,
+            },
+            navigation: {
+            nextEl: ".swiper-button-next-custom",
+            prevEl: ".swiper-button-prev-custom",
+            },
+        });
+        var swiperTravelMagazine = new Swiper(".swiper-travel-magazine", {
             slidesPerView: 1,
             speed: 400,
             centeredSlides: false,
@@ -810,6 +1206,10 @@
             pagination: {
                 el: ".swiper-pagination",
                 clickable: true,
+            },
+            navigation: {
+            nextEl: ".swiper-button-next-custom",
+            prevEl: ".swiper-button-prev-custom",
             },
         });
     </script>
