@@ -77,6 +77,10 @@ body {
   right: 0.5rem;
 }
 
+.right-4 {
+  right: 1rem;
+}
+
 .right-\[40\%\] {
   right: 40%;
 }
@@ -91,6 +95,10 @@ body {
 
 .top-2 {
   top: 0.5rem;
+}
+
+.top-3 {
+  top: 0.75rem;
 }
 
 .top-\[-2px\] {
@@ -611,11 +619,6 @@ body {
   background-color: rgb(248 248 248 / var(--tw-bg-opacity, 1));
 }
 
-.bg-\[rgba\(52\2c 105\2c 180\)\] {
-  --tw-bg-opacity: 1;
-  background-color: rgba(52, 105, 180, var(--tw-bg-opacity, 1));
-}
-
 .bg-primary {
   background-color: var(--primary);
 }
@@ -915,6 +918,10 @@ body {
   opacity: 1;
 }
 
+.mix-blend-hard-light {
+  mix-blend-mode: hard-light;
+}
+
 .shadow-lg {
   --tw-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1),
     0 4px 6px -4px rgb(0 0 0 / 0.1);
@@ -952,6 +959,7 @@ body {
 .duration-300 {
   transition-duration: 300ms;
 }
+
 .text-gradient {
   background: linear-gradient(270deg, #ff3535 3.33%, #cf1919 100%);
   -webkit-background-clip: text;

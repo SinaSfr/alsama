@@ -76,10 +76,32 @@ document.addEventListener("DOMContentLoaded", function () {
     const menuButton = document.querySelector(".menu-button");
     const menuDropdown = document.querySelector(".menu-dropdown");
     const blueDropdown = document.querySelector(".blue-dropdown");
-  
-    menuButton.addEventListener("click", function () {
+
+    menuButton.addEventListener("click", function (event) {
         menuDropdown.classList.toggle("scale-y-0");
         menuDropdown.classList.toggle("scale-y-100");
-        blueDropdown.classList.toggle("rotate-180")
+        blueDropdown.classList.toggle("rotate-180");
+
+        event.stopPropagation();
     });
-  });
+
+    document.addEventListener("click", function (event) {
+        if (!menuDropdown.contains(event.target) && !menuButton.contains(event.target)) {
+            menuDropdown.classList.add("scale-y-0");
+            menuDropdown.classList.remove("scale-y-100");
+            blueDropdown.classList.remove("rotate-180");
+        }
+    });
+
+    const menuItems = menuDropdown.querySelectorAll("li");
+    menuItems.forEach(function(item) {
+        item.addEventListener("click", function () {
+            menuButton.querySelector(".new-text").innerHTML = item.innerHTML; 
+            menuDropdown.classList.add("scale-y-0");
+            menuDropdown.classList.remove("scale-y-100");
+            blueDropdown.classList.remove("rotate-180");
+        });
+    });
+});
+
+

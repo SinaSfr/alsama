@@ -632,6 +632,10 @@ body {
   right: 0.5rem;
 }
 
+.right-4 {
+  right: 1rem;
+}
+
 .right-\[40\%\] {
   right: 40%;
 }
@@ -646,6 +650,10 @@ body {
 
 .top-2 {
   top: 0.5rem;
+}
+
+.top-3 {
+  top: 0.75rem;
 }
 
 .top-\[-2px\] {
@@ -1158,11 +1166,6 @@ body {
   background-color: rgb(248 248 248 / var(--tw-bg-opacity, 1));
 }
 
-.bg-\[rgba\(52\2c 105\2c 180\)\] {
-  --tw-bg-opacity: 1;
-  background-color: rgba(52, 105, 180, var(--tw-bg-opacity, 1));
-}
-
 .bg-primary {
   background-color: var(--primary);
 }
@@ -1460,6 +1463,10 @@ body {
 
 .opacity-100 {
   opacity: 1;
+}
+
+.mix-blend-hard-light {
+  mix-blend-mode: hard-light;
 }
 
 .shadow-lg {
