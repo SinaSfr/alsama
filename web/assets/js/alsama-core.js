@@ -1,107 +1,172 @@
-// const headerMenu = document.querySelector(".header-menu");
-// const headerMenuClose = document.querySelector(".header-menu-close");
-// const bars3 = document.querySelector(".bars3");
+function loadContentHomePage() {
+  loadSearchEngine("search-engine-en.bc", "search-box");
+}
 
-// if (window.innerWidth >= 1024) {
-//   headerMenuClose.addEventListener("click", function () {
-//     headerMenu.style.visibility = "hidden";
-//     headerMenu.style.opacity = "0";
-//     // headerMenu.style.display = "none";
-//   });
-//   bars3.addEventListener("click", function () {
-//     headerMenu.style.visibility = "visible";
-//     headerMenu.style.opacity = "1";
-//     // headerMenu.style.display = "block";
-//   });
-// } else {
-//   headerMenuClose.addEventListener("click", function () {
-//     headerMenu.style.transform = "translateX(1024px)";
-//   });
-//   bars3.addEventListener("click", function () {
-//     headerMenu.style.transform = "translateX(0)";
-//   });
-// }
+async function loadSearchEngine(url, sectionload) {
+  try {
+    var xhrobj = new XMLHttpRequest();
+    xhrobj.open("GET", url);
+    xhrobj.send();
 
-// document.addEventListener("DOMContentLoaded", function () {
-//   const toggleDropdowns = document.querySelectorAll(".toggle-dropdown");
-//   const dropdownIcons = document.querySelectorAll(".dropdown-icon");
+    xhrobj.onreadystatechange = function () {
+      if (this.readyState == 4 && this.status == 200) {
+        var container = document.getElementById(sectionload);
+        container.innerHTML = xhrobj.responseText;
 
-//   toggleDropdowns.forEach((toggle, index) => {
-//     const submenu = toggle.nextElementSibling;
-//     const dropdownIcon = dropdownIcons[index];
+        var scripts = container.getElementsByTagName("script");
+        for (var i = 0; i < scripts.length; i++) {
+          var scriptTag = document.createElement("script");
+          if (scripts[i].src) {
+            scriptTag.src = scripts[i].src;
+            scriptTag.async = false;
+          } else {
+            scriptTag.text = scripts[i].textContent;
+          }
+          document.head
+            .appendChild(scriptTag)
+            .parentNode.removeChild(scriptTag);
+        }
+        const pathnamehome = window.location.pathname;
+        if (pathnamehome) {
+          if (pathnamehome == "/hotel") {
+            sessionStorage.setItem("pageName", "hotel");
+            $("#Hotel").click(function () {
+              $("#flight-type-items").hide();
+              $(".nav-module").each(function () {
+                var checknav = $(this).attr("data-nav");
+                if (checknav == "hotel") {
+                  $(this).addClass("nav-module-selected");
+                } else {
+                  $(this).removeClass("nav-module-selected");
+                }
+              });
+              LoadHotel();
+            });
+          }
+        } else if (pathnamehome == "/tour") {
+          sessionStorage.setItem("pageName", "tour");
+          $("#Tour").click(function () {
+            $("#flight-type-items").hide();
+            $(".nav-module").each(function () {
+              var checknav = $(this).attr("data-nav");
+              if (checknav == "tour") {
+                $(this).addClass("nav-module-selected");
+              } else {
+                $(this).removeClass("nav-module-selected");
+              }
+            });
+            LoadTour();
+          });
+        }
+      }
+    };
+  } catch (error) {}
+}
 
-//     toggle.addEventListener("click", function () {
-//       dropdownIcon.classList.toggle("rotate-180");
+const headerMenu = document.querySelector(".header-menu");
+const headerMenuClose = document.querySelector(".header-menu-close");
+const bars3 = document.querySelector(".bars3");
 
-//       if (submenu.style.maxHeight) {
-//         submenu.style.maxHeight = null;
-//         submenu.style.opacity = "0";
-//       } else {
-//         submenu.style.maxHeight = submenu.scrollHeight * 10 + "px";
-//         submenu.style.opacity = "1";
-//       }
-//     });
-//   });
-// });
-
-// document.addEventListener("DOMContentLoaded", function () {
-//   const faqBox = document.querySelectorAll(".faq-box");
-//   const faqBtns = document.querySelectorAll(".faq-btn");
-//   const faqAnswers = document.querySelectorAll(".faq-answer");
-
-//   faqBox.forEach((button, index) => {
-//     button.addEventListener("click", function () {
-//       const faqAnswer = faqAnswers[index];
-
-//       faqAnswers[index].style.marginTop = "8px"
-//       // button.style.backgroundColor = "#FFF3E0";
-//       // button.style.border = "1px solid #FFDFB1";
-
-//       if (faqAnswer.classList.contains("max-h-0")) {
-//         faqAnswer.classList.remove("max-h-0", "opacity-0");
-//         faqAnswer.classList.add("max-h-screen", "opacity-100");
-//       } else {
-//         faqAnswer.classList.add("max-h-0", "opacity-0");
-//         faqAnswer.classList.remove("max-h-screen", "opacity-100");
-
-
-//         button.style.backgroundColor = ""; 
-//         button.style.border = ""; 
-//       }
-//     });
-//   });
-// });
+if (window.innerWidth >= 1024) {
+  headerMenuClose.addEventListener("click", function () {
+    headerMenu.style.visibility = "hidden";
+    headerMenu.style.opacity = "0";
+    // headerMenu.style.display = "none";
+  });
+  bars3.addEventListener("click", function () {
+    headerMenu.style.visibility = "visible";
+    headerMenu.style.opacity = "1";
+    // headerMenu.style.display = "block";
+  });
+} else {
+  headerMenuClose.addEventListener("click", function () {
+    headerMenu.style.transform = "translateX(1024px)";
+  });
+  bars3.addEventListener("click", function () {
+    headerMenu.style.transform = "translateX(0)";
+  });
+}
 
 document.addEventListener("DOMContentLoaded", function () {
-    const menuButton = document.querySelector(".menu-button");
-    const menuDropdown = document.querySelector(".menu-dropdown");
-    const blueDropdown = document.querySelector(".blue-dropdown");
+  const toggleDropdowns = document.querySelectorAll(".toggle-dropdown");
+  const dropdownIcons = document.querySelectorAll(".dropdown-icon");
 
-    menuButton.addEventListener("click", function (event) {
-        menuDropdown.classList.toggle("scale-y-0");
-        menuDropdown.classList.toggle("scale-y-100");
-        blueDropdown.classList.toggle("rotate-180");
+  toggleDropdowns.forEach((toggle, index) => {
+    const submenu = toggle.nextElementSibling;
+    const dropdownIcon = dropdownIcons[index];
 
-        event.stopPropagation();
+    toggle.addEventListener("click", function () {
+      dropdownIcon.classList.toggle("rotate-180");
+
+      if (submenu.style.maxHeight) {
+        submenu.style.maxHeight = null;
+        submenu.style.opacity = "0";
+      } else {
+        submenu.style.maxHeight = submenu.scrollHeight * 10 + "px";
+        submenu.style.opacity = "1";
+      }
     });
-
-    document.addEventListener("click", function (event) {
-        if (!menuDropdown.contains(event.target) && !menuButton.contains(event.target)) {
-            menuDropdown.classList.add("scale-y-0");
-            menuDropdown.classList.remove("scale-y-100");
-            blueDropdown.classList.remove("rotate-180");
-        }
-    });
-
-    const menuItems = menuDropdown.querySelectorAll("li");
-    menuItems.forEach(function(item) {
-        item.addEventListener("click", function () {
-            menuButton.querySelector(".new-text").innerHTML = item.innerHTML; 
-            menuDropdown.classList.add("scale-y-0");
-            menuDropdown.classList.remove("scale-y-100");
-            blueDropdown.classList.remove("rotate-180");
-        });
-    });
+  });
 });
 
+document.addEventListener("DOMContentLoaded", function () {
+  const faqBox = document.querySelectorAll(".faq-box");
+  const faqBtns = document.querySelectorAll(".faq-btn");
+  const faqAnswers = document.querySelectorAll(".faq-answer");
 
+  faqBox.forEach((button, index) => {
+    button.addEventListener("click", function () {
+      const faqAnswer = faqAnswers[index];
+
+      faqAnswers[index].style.marginTop = "8px";
+      // button.style.backgroundColor = "#FFF3E0";
+      // button.style.border = "1px solid #FFDFB1";
+
+      if (faqAnswer.classList.contains("max-h-0")) {
+        faqAnswer.classList.remove("max-h-0", "opacity-0");
+        faqAnswer.classList.add("max-h-screen", "opacity-100");
+      } else {
+        faqAnswer.classList.add("max-h-0", "opacity-0");
+        faqAnswer.classList.remove("max-h-screen", "opacity-100");
+
+        button.style.backgroundColor = "";
+        button.style.border = "";
+      }
+    });
+  });
+});
+
+document.addEventListener("DOMContentLoaded", function () {
+  const menuButton = document.querySelector(".menu-button");
+  const menuDropdown = document.querySelector(".menu-dropdown");
+  const blueDropdown = document.querySelector(".blue-dropdown");
+
+  menuButton.addEventListener("click", function (event) {
+    menuDropdown.classList.toggle("scale-y-0");
+    menuDropdown.classList.toggle("scale-y-100");
+    blueDropdown.classList.toggle("rotate-180");
+
+    event.stopPropagation();
+  });
+
+  document.addEventListener("click", function (event) {
+    if (
+      !menuDropdown.contains(event.target) &&
+      !menuButton.contains(event.target)
+    ) {
+      menuDropdown.classList.add("scale-y-0");
+      menuDropdown.classList.remove("scale-y-100");
+      blueDropdown.classList.remove("rotate-180");
+    }
+  });
+
+  const menuItems = menuDropdown.querySelectorAll("li");
+  menuItems.forEach(function (item) {
+    item.addEventListener("click", function () {
+      menuButton.querySelector(".new-text").innerHTML = item.innerHTML;
+      menuDropdown.classList.add("scale-y-0");
+      menuDropdown.classList.remove("scale-y-100");
+      blueDropdown.classList.remove("rotate-180");
+    });
+  });
+});

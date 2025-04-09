@@ -1,3 +1,4 @@
+@charset "utf-8";
 *,
 ::before,
 ::after {
@@ -296,7 +297,7 @@ table {
   /* 1 */
   border-color: inherit;
   /* 2 */
-  border-collapse: collapse;
+
   /* 3 */
 }
 
@@ -549,7 +550,6 @@ object {
 
 img,
 video {
-  max-width: 100%;
   height: auto;
 }
 
@@ -1019,25 +1019,14 @@ body {
   --primary-800: #3469b4;
   --primary-900: #294c94;
   --primary-950: #1d3974;
-  --secondary: #8e7430;
-  --secondary-50: #f2ecdb;
-  --secondary-100: #e0cfa5;
-  --secondary-200: #cbb06b;
-  --secondary-300: #bda35f;
-  --secondary-400: #ad924c;
-  --secondary-500: #9f833a;
-  --secondary-600: #8e7430;
-  --secondary-700: #816723;
-  --secondary-800: #745a17;
-  --secondary-900: #674f0f;
-  --secondary-950: #553f04;
   --special-1: #00000066;
   --special-2: #ffffff33;
+  --special-3: #0000004D;
   ---bg: url("");
-  --default-bg: url("../images/default-back.png");
+  --default-bg: url("../images/default-back.jpg");
   --tourlist-bg: url("../images/tour-list-back.jpg");
-  --articlelist-bg: url("../images/article-list-back.jpg");
-  --footer-bg: url("../images/footer-back.jpg");
+  --contact-bg: url("../images/contact-back.jpg");
+  --hotellist-bg: url("../images/hotel-list-back.png");
 }
 
 @font-face {
@@ -1049,7 +1038,7 @@ body {
 
   font-weight: 400;
 
-  src: url("../fonts/Dana-Regular.ttf") format("truetype");
+  src: url("../_fonts/Dana-Regular.woff") format("woff");
 }
 
 @font-face {
@@ -1061,7 +1050,7 @@ body {
 
   font-weight: 500;
 
-  src: url("../fonts/Dana-Medium.ttf") format("truetype");
+  src: url("../_fonts/Dana-Medium.woff") format("woff");
 }
 
 @font-face {
@@ -1073,7 +1062,19 @@ body {
 
   font-weight: 700;
 
-  src: url("../fonts/Dana-Bold.ttf") format("truetype");
+  src: url("../_fonts/Dana-Bold.woff") format("woff");
+}
+@font-face {
+  font-display: swap;
+  font-family: "fontawesome";
+  font-style: normal;
+  font-weight: normal;
+  font-display: block;
+  src: url("../_fonts/fontawesome-webfont.eot");
+  src: url("../_fonts/fontawesome-webfont.eot") format("embedded-opentype"),
+    url("../_fonts/fontawesome-webfont.ttf") format("truetype"),
+    url("../_fonts/fontawesome-webfont.woff") format("truetype"),
+    url("../_fonts/fontawesome-webfont.svg") format("svg");
 }
 
 .primary-one {
@@ -1110,10 +1111,6 @@ body {
 
 .hover\:text-primary-700:hover {
   color: var(--primary-700);
-}
-
-.hover\:text-secondary-600:hover {
-  color: var(--secondary-600);
 }
 
 .group:hover .group-hover\:visible {
