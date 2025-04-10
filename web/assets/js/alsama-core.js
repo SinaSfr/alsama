@@ -170,3 +170,61 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   });
 });
+
+document.addEventListener("DOMContentLoaded", function () {
+  const fetchContentTour = document.querySelector(".fetch-content-tour");
+  const tourLi = document.querySelectorAll(".tour-li");
+
+  if (fetchContentTour) {
+    async function firstContent() {
+      fetchContentTour.innerHTML = '<div class="flex justify-center mb-6"><span class="tour-loader"></span></div>';
+      try {
+        const firstResponse = await fetch("/tour-load-items.bc?catid=214205");
+        if (!firstResponse.ok) {
+          throw new Error(`HTTP error! Status: ${firstResponse.status}`);
+        }
+        const firstData = await firstResponse.text();
+        fetchContentTour.innerHTML = firstData;
+      } catch (error) {
+        console.error("Fetch failed:", error);
+        fetchContentTour.innerHTML =
+          "<p>Error loading data: " + error.message + "</p>";
+      }
+    }
+    firstContent();
+
+    tourLi.forEach((item) => {
+      item.addEventListener("click", function () {
+        tourLi.forEach((li) => {
+          li.style.backgroundColor = "";
+          li.style.color = "";
+        });
+
+        item.style.backgroundColor = "#3469B4";
+        item.style.color = "#fff";
+
+        let cmsQuery = item.getAttribute("data-id");
+
+        async function secondContent() {
+          fetchContentTour.innerHTML =
+            '<div class="flex justify-center mb-6"><span class="tour-loader"></span></div>';
+          try {
+            const firstResponse = await fetch(
+              `/tour-load-items.bc?catid=${cmsQuery}`
+            );
+            if (!firstResponse.ok) {
+              throw new Error(`HTTP error! Status: ${firstResponse.status}`);
+            }
+            const firstData = await firstResponse.text();
+            fetchContentTour.innerHTML = firstData;
+          } catch (error) {
+            console.error("Fetch failed:", error);
+            fetchContentTour.innerHTML =
+              "<p>Error loading data: " + error.message + "</p>";
+          }
+        }
+        secondContent();
+      });
+    });
+  }
+});
