@@ -228,3 +228,174 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }
 });
+
+document.addEventListener("DOMContentLoaded", function () {
+  const fetchContentArticle = document.querySelector(".fetch-content-article");
+  const articleLi = document.querySelectorAll(".article-li");
+
+  if (fetchContentArticle) {
+    async function firstContent() {
+      fetchContentArticle.innerHTML = '<div class="flex justify-center mb-6"><span class="tour-loader"></span></div>';
+      try {
+        const firstResponse = await fetch("/article-load-items.bc?catid=214233");
+        if (!firstResponse.ok) {
+          throw new Error(`HTTP error! Status: ${firstResponse.status}`);
+        }
+        const firstData = await firstResponse.text();
+        fetchContentArticle.innerHTML = firstData;
+      } catch (error) {
+        console.error("Fetch failed:", error);
+        fetchContentArticle.innerHTML =
+          "<p>Error loading data: " + error.message + "</p>";
+      }
+    }
+    firstContent();
+
+    articleLi.forEach((item) => {
+      item.addEventListener("click", function () {
+        articleLi.forEach((li) => {
+          li.style.backgroundColor = "";
+          li.style.color = "";
+          li.style.border = "";
+        });
+
+        item.style.backgroundColor = "#75B8ED";
+        item.style.color = "#3469B4";
+        item.style.border = "1px solid #3A7AC6";
+
+        let cmsQuery = item.getAttribute("data-id");
+
+        async function secondContent() {
+          fetchContentArticle.innerHTML =
+            '<div class="flex justify-center mb-6"><span class="tour-loader"></span></div>';
+          try {
+            const firstResponse = await fetch(
+              `/article-load-items.bc?catid=${cmsQuery}`
+            );
+            if (!firstResponse.ok) {
+              throw new Error(`HTTP error! Status: ${firstResponse.status}`);
+            }
+            const firstData = await firstResponse.text();
+            fetchContentArticle.innerHTML = firstData;
+          } catch (error) {
+            console.error("Fetch failed:", error);
+            fetchContentArticle.innerHTML =
+              "<p>Error loading data: " + error.message + "</p>";
+          }
+        }
+        secondContent();
+      });
+    });
+  }
+});
+
+if (document.querySelector(".swiper-best-hotel")) {
+var swiperBestHotel = new Swiper(".swiper-best-hotel", {
+    slidesPerView: 5,
+    speed: 400,
+    centeredSlides: false,
+    spaceBetween: 12,
+    grabCursor: true,
+    autoplay: {
+        delay: 2500,
+        disableOnInteraction: false,
+    },
+    loop: true,
+    pagination: {
+        el: ".swiper-pagination",
+        clickable: true,
+    },
+    navigation: {
+        nextEl: ".swiper-button-next-custom",
+        prevEl: ".swiper-button-prev-custom",
+    },
+});
+}
+if (document.querySelector(".swiper-popular-destination")) {
+var swiperPopularDestination = new Swiper(".swiper-popular-destination", {
+    slidesPerView: 4,
+    speed: 400,
+    centeredSlides: false,
+    spaceBetween: 12,
+    grabCursor: true,
+    autoplay: {
+        delay: 2500,
+        disableOnInteraction: false,
+    },
+    loop: true,
+    pagination: {
+        el: ".swiper-pagination",
+        clickable: true,
+    },
+    navigation: {
+        nextEl: ".swiper-button-next-custom",
+        prevEl: ".swiper-button-prev-custom",
+    },
+});
+}
+if (document.querySelector(".swiper-travel-magazine")) {
+var swiperTravelMagazine = new Swiper(".swiper-travel-magazine", {
+    slidesPerView: 1,
+    speed: 400,
+    centeredSlides: false,
+    spaceBetween: 12,
+    grabCursor: true,
+    autoplay: {
+        delay: 4500,
+        disableOnInteraction: false,
+    },
+    loop: true,
+    pagination: {
+        el: ".swiper-pagination",
+        clickable: true,
+    },
+    navigation: {
+        nextEl: ".swiper-button-next-custom",
+        prevEl: ".swiper-button-prev-custom",
+    },
+});
+}
+if (document.querySelector(".swiper-best-hotel-list")) {
+var swiper = new Swiper(".swiper-best-hotel-list", {
+    slidesPerView: 4,
+    speed: 400,
+    centeredSlides: false,
+    spaceBetween: 12,
+    grabCursor: true,
+    autoplay: {
+        delay: 2500,
+        disableOnInteraction: false,
+    },
+    loop: true,
+    pagination: {
+        el: ".swiper-pagination",
+        clickable: true,
+    },
+    navigation: {
+        nextEl: ".swiper-button-next-custom",
+        prevEl: ".swiper-button-prev-custom",
+    },
+});
+}
+if (document.querySelector(".swiper-article-list")) {
+var swiperPopularDestination = new Swiper(".swiper-article-list", {
+slidesPerView: 1,
+speed: 400,
+centeredSlides: false,
+spaceBetween: 12,
+grabCursor: true,
+autoplay: {
+    delay: 4500,
+    disableOnInteraction: false,
+},
+loop: true,
+pagination: {
+    el: ".swiper-pagination",
+    clickable: true,
+},
+navigation: {
+nextEl: ".swiper-button-next-custom",
+prevEl: ".swiper-button-prev-custom",
+},
+});
+}

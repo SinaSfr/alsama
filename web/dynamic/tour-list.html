@@ -114,7 +114,7 @@
                             <div class="flex justify-between items-center mb-2">
                                 <span class="text-sm text-zinc-900">@db.tour-list.prp_3087658</span>
                                 <svg width="93" height="1">
-                                    <use xlink:href="[##cms.cms.cdn##]/images/sprite-icons.svg#icon-dash-border-desktop"></use>
+                                    <use xlink:href="./images/sprite-icons.svg#icon-dash-border-desktop"></use>
                                 </svg>
                                 <span class="text-sm text-zinc-900">@db.tour-list.prp_3087659</span>
                             </div>
@@ -122,7 +122,7 @@
                             <div class="flex items-center justify-between">
                                 <span class="text-zinc-800 font-medium">@db.tour-list.prp_8181</span>
                                 <svg width="48" height="48" class="transition-all duration-300 group-hover:rotate-180 group-hover:-translate-x-20">
-                                    <use xlink:href="[##cms.cms.cdn##]/images/sprite-icons.svg#icon-chevron-right-blue"></use>
+                                    <use xlink:href="./images/sprite-icons.svg#icon-chevron-right-blue"></use>
                                 </svg>
                             </div>
                         </div>
@@ -138,7 +138,7 @@
                             <div class="flex justify-between items-center mb-2">
                                 <span class="text-sm text-zinc-900">@db.tour-list.prp_3087658</span>
                                 <svg width="93" height="1">
-                                    <use xlink:href="[##cms.cms.cdn##]/images/sprite-icons.svg#icon-dash-border-desktop"></use>
+                                    <use xlink:href="./images/sprite-icons.svg#icon-dash-border-desktop"></use>
                                 </svg>
                                 <span class="text-sm text-zinc-900">@db.tour-list.prp_3087659</span>
                             </div>
@@ -146,7 +146,7 @@
                             <div class="flex items-center justify-between">
                                 <span class="text-zinc-800 font-medium">@db.tour-list.prp_8181</span>
                                 <svg width="48" height="48" class="transition-all duration-300 group-hover:rotate-180 group-hover:-translate-x-20">
-                                    <use xlink:href="[##cms.cms.cdn##]/images/sprite-icons.svg#icon-chevron-right-blue"></use>
+                                    <use xlink:href="./images/sprite-icons.svg#icon-chevron-right-blue"></use>
                                 </svg>
                             </div>
                         </div>
@@ -161,28 +161,19 @@
                             <li
                                 class="flex items-center justify-center w-12 h-12 p-2 transition-all duration-300 page-no prev-page bg-primary-900 hover:bg-primary-500 rounded-full">
                                 <a class="flex items-center justify-center w-full cursor-pointer"
-                                    aria-label="angle-left" href="/[##cms.cms.link_page##]&pagenum=@page"><svg
-                                        width="11" height="17"
-                                        class="inline-block align-middle transition-all duration-300"
-                                        viewBox="0 0 11 17" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <path 
-                                            fill-rule="evenodd" clip-rule="evenodd"
-                                            d="M8.7499 16.914L0.335938 8.5L8.7499 0.0859985L10.1639 1.5L3.1639 8.5L10.1639 15.5L8.7499 16.914Z"
-                                            fill="#284E65" />
-                                    </svg></a></li>
+                                    aria-label="angle-left" href="/[##cms.cms.link_page##]&pagenum=@page"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M19 12L5 12M5 12L11 18M5 12L11 6" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                        </svg>
+                                        </a></li>
                         </face>
                         <face filter="(@sta='pre')and('[##cms.cms.pageurl##]'<>'')">
                             <li
                                 class="flex items-center justify-center w-12 h-12 p-2 transition-all duration-300 page-no prev-page bg-primary-900 hover:bg-primary-500 rounded-full">
                                 <a class="flex items-center justify-center w-full cursor-pointer"
-                                    aria-label="angle-left" href="/[##cms.cms.pageurl##]?pagenum=@page"><svg width="11"
-                                        height="17" class="align-middle transition-all duration-300inline-block"
-                                        viewBox="0 0 11 17" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <path
-                                            fill-rule="evenodd" clip-rule="evenodd"
-                                            d="M8.7499 16.914L0.335938 8.5L8.7499 0.0859985L10.1639 1.5L3.1639 8.5L10.1639 15.5L8.7499 16.914Z"
-                                            fill="#284E65" />
-                                    </svg></a></li>
+                                    aria-label="angle-left" href="/[##cms.cms.pageurl##]?pagenum=@page"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M19 12L5 12M5 12L11 18M5 12L11 6" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                        </svg>
+                                        </a></li>
                         </face>
                     </basis>
                     <basis core="print" datamembername="db.paging">
@@ -201,14 +192,14 @@
                         <face
                             filter="(@page<>[##cms.query.pagenum|(1)##]) and (@page>0) and (@sta='no') and ('[##cms.cms.pageurl##]'='') ">
                             <li
-                                class="flex items-center justify-center w-12 h-12 p-2 transition-all duration-300 text-zinc-700 hover:bg-secondary-200 rounded-full bg-zinc-300 page-no">
+                                class="flex items-center justify-center w-12 h-12 p-2 transition-all duration-300 text-zinc-700 hover:text-white hover:bg-primary-800 rounded-full bg-zinc-300 page-no">
                                 <a class="flex items-center justify-center w-full h-full cursor-pointer page-number"
                                     href="/[##cms.cms.link_page##]&pagenum=@page">@page</a></li>
                         </face>
                         <face
                             filter="(@page<>[##cms.query.pagenum|(1)##]) and (@page>0) and (@sta='no') and ('[##cms.cms.pageurl##]'<>'') ">
                             <li
-                                class="flex items-center justify-center w-12 h-12 p-2 transition-all duration-300 text-zinc-700 hover:bg-secondary-200 rounded-full bg-zinc-300 page-no">
+                                class="flex items-center justify-center w-12 h-12 p-2 transition-all duration-300 text-zinc-700 hover:text-white hover:bg-primary-800 rounded-full bg-zinc-300 page-no">
                                 <a class="flex items-center justify-center w-full h-full cursor-pointer page-number"
                                     href="/[##cms.cms.pageurl##]?pagenum=@page">@page</a></li>
                         </face>
@@ -218,28 +209,19 @@
                             <li
                                 class="flex items-center justify-center w-12 h-12 p-2 transition-all duration-300 page-no prev-page bg-primary-900 hover:bg-primary-500 rounded-full">
                                 <a class="flex items-center justify-center w-full h-full cursor-pointer text-zinc-900"
-                                    aria-label="angle-right" href="/[##cms.cms.link_page##]&pagenum=@page"><svg
-                                        width="11" height="17"
-                                        class="inline-block align-middle transition-all duration-300"
-                                        viewBox="0 0 11 17" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <path class="transition-all duration-300 group-hover:fill-white"
-                                            fill-rule="evenodd" clip-rule="evenodd"
-                                            d="M2.2501 0.0860016L10.6641 8.5L2.2501 16.914L0.836102 15.5L7.8361 8.5L0.836103 1.5L2.2501 0.0860016Z"
-                                            fill="#284E65" />
-                                    </svg></a></li>
+                                    aria-label="angle-right" href="/[##cms.cms.link_page##]&pagenum=@page"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M5 12H19M19 12L13 6M19 12L13 18" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                        </svg>
+                                        </a></li>
                         </face>
                         <face filter="(@sta='nex') and ('[##cms.cms.pageurl##]'<>'')">
                             <li
                                 class="flex items-center justify-center w-12 h-12 p-2 transition-all duration-300 page-no prev-page bg-primary-900 hover:bg-primary-500 rounded-full">
                                 <a class="flex items-center justify-center w-full h-full cursor-pointer "
-                                    aria-label="angle-right" href="/[##cms.cms.pageurl##]?pagenum=@page"><svg width="11"
-                                        height="17" class="inline-block align-middle transition-all duration-300"
-                                        viewBox="0 0 11 17" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <path
-                                            fill-rule="evenodd" clip-rule="evenodd"
-                                            d="M2.2501 0.0860016L10.6641 8.5L2.2501 16.914L0.836102 15.5L7.8361 8.5L0.836103 1.5L2.2501 0.0860016Z"
-                                            fill="#284E65" />
-                                    </svg></a></li>
+                                    aria-label="angle-right" href="/[##cms.cms.pageurl##]?pagenum=@page"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M5 12H19M19 12L13 6M19 12L13 18" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                        </svg>
+                                        </a></li>
                         </face>
                     </basis>
                 </ul>
