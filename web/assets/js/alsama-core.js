@@ -289,6 +289,62 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 });
 
+
+function uploadDocumentFooter(args) {
+  document.querySelector("#footer-form-resize .Loading_Form").style.display =
+    "block";
+  const captcha = document
+    .querySelector("#footer-form-resize")
+    .querySelector("#captchaContainer input[name='captcha']").value;
+  const captchaid = document
+    .querySelector("#footer-form-resize")
+    .querySelector("#captchaContainer input[name='captchaid']").value;
+  const stringJson = JSON.stringify(args.source?.rows[0]);
+  $bc.setSource("cms.uploadFooter", {
+    value: stringJson,
+    captcha: captcha,
+    captchaid: captchaid,
+    run: true,
+  });
+}
+
+function refreshCaptchaFooter(e) {
+  $bc.setSource("captcha.refreshFooter", true);
+}
+
+async function OnProcessedEditObjectFooter(args) {
+  var response = args.response;
+  var json = await response.json();
+  var errorid = json.errorid;
+  if (errorid == "6") {
+    document.querySelector("#footer-form-resize .Loading_Form").style.display =
+      "none";
+    document.querySelector("#footer-form-resize .message-api").innerHTML =
+      "Your request has been successfully registered.";
+  } else {
+    refreshCaptchaFooter();
+    setTimeout(() => {
+      document.querySelector(
+        "#footer-form-resize .Loading_Form"
+      ).style.display = "none";
+      document.querySelector("#footer-form-resize .message-api").innerHTML =
+        "An error occurred, please try again.";
+    }, 2000);
+  }
+}
+
+async function RenderFormFooter() {
+  var inputElementVisa7 = document.querySelector(
+    ".footer-username input[data-bc-text-input]"
+  );
+  inputElementVisa7.setAttribute("placeholder", "First/Last Name");
+
+  var inputElementVisa7 = document.querySelector(
+    " .footer-email input[data-bc-text-input]"
+  );
+  inputElementVisa7.setAttribute("placeholder", "Email");
+}
+
 if (document.querySelector(".swiper-best-hotel")) {
 var swiperBestHotel = new Swiper(".swiper-best-hotel", {
     slidesPerView: 5,
