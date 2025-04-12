@@ -1,5 +1,5 @@
 <basis core="dbsource" source="basiscore" lid="2" mid="1" name="db" catid="[##cms.query.catid##]">
-    <member name="article-list" type="list" link="article.bc" order="ord" size="418x234"
+    <member name="article-list" type="list" link="article.bc" order="ord" size="288x234"
         propertyid="7244,7249,3087660" pageno="[##cms.query.pagenum|(1)##]" perpage="3" />
     <member name="paging" type="list" request="paging" count="3" parentname="article-list" />
 </basis>
@@ -7,38 +7,61 @@
 
 
 
-<basis>
+<basis core="list" datamembername="db.article-list">
     <layout>
         <div class="flex flex-col gap-3">
             <!-- items -->
             @child
         </div>
     </layout>
-    <face>
+    <face filter="link in null">
         <div class="flex flex-col gap-3">
-            <img src="../assets/images/magazine-card.jpg" class="h-48 object-cover rounded-xl" alt=""
+            <img src="@00288X00234prp" class="h-48 object-cover rounded-xl" alt="@title"
                 width="100%" height="187" loading="lazy">
-            <h2 class="text-zinc-900 font-medium">Round the world trip</h2>
-            <div class="text-sm text-justify text-zinc-900">Lorem ipsum dolor sit amet, consectetur adipiscing
-                elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Egestas purus viverra
-                accumsan in nisl nisi. Arcu cursus vitae congue mauris rhoncus aenean vel elit scelerisque. In
-                egestas erat imperdiet sed euismod nisi porta lorem mollis. Morbi tristique senectus et netus.
-            </div>
+            <h2 class="text-zinc-900 font-medium">@title</h2>
+            <div class="text-sm text-justify text-zinc-900">@prp_7244</div>
             <div class="flex items-center gap-6">
                 <span class="flex items-center text-sm text-zinc-900 gap-2">
                     <svg width="24" height="24">
                         <use xlink:href="./images/sprite-icons.svg#icon-magazine-calender"></use>
                     </svg>
-                    20-03-2024
+                    @prp_7249
                 </span>
 
                 <span class="flex items-center text-sm text-zinc-900 gap-2">
                     <svg width="24" height="24">
                         <use xlink:href="./images/sprite-icons.svg#icon-clock"></use>
                     </svg>
-                    2 Min
+                    @prp_3087660
                 </span>
             </div>
+            <a href="/article.bc?id=@id" class="relative group/leveltwo z-10 flex items-center justify-center bg-primary-800 rounded-lg text-white font-medium py-4 w-36">Read More
+            </a>
+        </div>
+    </face>
+    <face>
+        <div class="flex flex-col gap-3">
+            <img src="@00288X00234prp" class="h-48 object-cover rounded-xl" alt="@title"
+                width="100%" height="187" loading="lazy">
+            <h2 class="text-zinc-900 font-medium">@title</h2>
+            <div class="text-sm text-justify text-zinc-900">@prp_7244</div>
+            <div class="flex items-center gap-6">
+                <span class="flex items-center text-sm text-zinc-900 gap-2">
+                    <svg width="24" height="24">
+                        <use xlink:href="./images/sprite-icons.svg#icon-magazine-calender"></use>
+                    </svg>
+                    @prp_7249
+                </span>
+
+                <span class="flex items-center text-sm text-zinc-900 gap-2">
+                    <svg width="24" height="24">
+                        <use xlink:href="./images/sprite-icons.svg#icon-clock"></use>
+                    </svg>
+                    @prp_3087660
+                </span>
+            </div>
+            <a href="@link" class="relative group/leveltwo z-10 flex items-center justify-center bg-primary-800 rounded-lg text-white font-medium py-4 w-36">Read More
+            </a>
         </div>
     </face>
 </basis>

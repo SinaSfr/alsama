@@ -6,7 +6,7 @@
 </basis>
 
 <basis core="dbsource" source="basiscore" lid="2" mid="1" name="db" catid="214240">
-    <member name="hot-news" type="list" link="article.bc" order="ord" size="567x345" propertyid="7244,7249,3087660"
+    <member name="hot-news" type="list" link="article.bc" order="ord" size="288x187" propertyid="7244,7249,3087660"
         perpage="6" />
 </basis>
 <basis core="dbsource" source="basiscore" lid="2" mid="1" name="db" usedforid="[##cms.query.aid##]">
@@ -62,7 +62,7 @@
                     class="relative flex items-center text-sm gap-1 mt-2">
                     <li class="inline-block font-normal text-zinc-700" itemprop="itemListElement" itemscope
                         itemtype="https://schema.org/ListItem">
-                        <a class="text-white hover:text-primary-300" itemprop="item" href="/" aria-label="home"><span
+                        <a class="text-zinc-700 hover:text-primary-300" itemprop="item" href="/" aria-label="home"><span
                                 itemprop="name">Home</span>
                             <meta itemprop="position" content="1" />
                         </a>
@@ -111,7 +111,7 @@
             <basis core="tree" datamembername="article-list.cat" idcol="catid" parentidcol="parentid"
                 nullvalue="214233">
                 <layout>
-                    <ul class="flex items-center gap-2 mt-7">
+                    <ul class="flex items-center gap-2 mt-7 overflow-x-auto whitespace-nowrap scrollbar-thin">
                         @child
                     </ul>
                 </layout>
@@ -135,7 +135,7 @@
                 </div>
             </div>
             <!-- Slider main container -->
-            <div class="swiper swiper-article-list-mobile">
+            <div class="swiper pb-10 swiper-article-list-mobile">
                 <basis core="list" datamembername="db.hot-news">
                     <layout>
                         <!-- Additional required wrapper -->
@@ -147,10 +147,10 @@
                     <face filter="link is null">
                         <div class="swiper-slide">
                             <div class="flex flex-col gap-3">
-                                <img src="@00567X00345prp" class="h-48 object-cover rounded-xl"
+                                <img src="@00288X00187prp" class="h-48 object-cover rounded-xl"
                                     alt="@title" width="100%" height="187" loading="lazy">
                                 <h2 class="text-zinc-900 font-medium">@title</h2>
-                                <div class="text-sm text-justify text-zinc-900">@prp_7244</div>
+                                <div class="text-sm text-justify text-zinc-900 line-clamp-8">@prp_7244</div>
                                 <div class="flex items-center gap-6">
                                     <span class="flex items-center text-sm text-zinc-900 gap-2">
                                         <svg width="24" height="24">
@@ -176,10 +176,10 @@
                     <face>
                         <div class="swiper-slide">
                             <div class="flex flex-col gap-3">
-                                <img src="@00567X00345prp" class="h-48 object-cover rounded-xl"
+                                <img src="@00288X00187prp" class="h-48 object-cover rounded-xl"
                                     alt="@title" width="100%" height="187" loading="lazy">
                                 <h2 class="text-zinc-900 font-medium">@title</h2>
-                                <div class="text-sm text-justify text-zinc-900">@prp_7244</div>
+                                <div class="text-sm text-justify text-zinc-900 line-clamp-8">@prp_7244</div>
                                 <div class="flex items-center gap-6">
                                     <span class="flex items-center text-sm text-zinc-900 gap-2">
                                         <svg width="24" height="24">
@@ -216,22 +216,24 @@
 
             </div>
         </section>
-        <section class="mx-auto max-lg:w-[90%] max-xl:w-[97%] xl:max-w-7xl my-6">
-            <h2 class="text-xl font-bold text-zinc-900 mb-3">Our history</h2>
-            <div class="text-zinc-900 text-sm text-justify">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
-                dolore magna aliqua. Egestas purus viverra accumsan in nisl nisi. Arcu cursus vitae congue mauris
-                rhoncus aenean vel elit scelerisque. In egestas erat imperdiet sed euismod nisi porta lorem mollis.
-                Morbi tristique senectus et netus. Mattis pellentesque id nibh tortor id aliquet lectus proin. Sapien
-                faucibus et molestie ac feugiat sed lectus vestibulum. Ullamcorper velit sed ullamcorper morbi tincidunt
-                ornare massa eget. Dictum varius duis at consectetur lorem. Nisi vitae suscipit tellus mauris a diam
-                maecenas sed enim. Velit ut tortor pretium viverra suspendisse potenti nullam. Et molestie ac feugiat
-                sed lectus. Non nisi est sit amet facilisis magna. Dignissim diam quis enim lobortis scelerisque
-                fermentum. Odio ut enim blandit volutpat maecenas volutpat. Ornare lectus sit amet est placerat in
-                egestas erat.
-            </div>
-        </section>
+        <basis core="print" datamembername="db.our-history">
+            <layout>
+                <section class="mx-auto max-lg:w-[90%] max-xl:w-[97%] xl:max-w-7xl my-6">
+                    @child
+                </section>
+            </layout>
+            <face filter="TypeID in(150)">
+                <h2 class="text-xl font-bold text-zinc-900 mb-3">@text</h2>
+            </face>
+            <face filter="TypeID in(129)">
+                <div class="text-zinc-900 text-sm text-justify">
+                    @largetext
+                </div>
+            </face>
+        </basis>
+
     </main>
+    <script src="https://cdn.basiscore.net/basisfly.com/js/swiper-bundle.min.js"></script>
     <basis core="call" file="footer.inc" lid="2" pageindex="[##cms.cms.pageindex##]" />
 </body>
 

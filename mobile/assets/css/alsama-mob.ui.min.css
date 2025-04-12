@@ -772,6 +772,10 @@ body {
   padding-bottom: 1rem;
 }
 
+.pb-10 {
+  padding-bottom: 2.25rem;
+}
+
 .pt-2 {
   padding-top: 0.5rem;
 }
@@ -992,6 +996,13 @@ body {
   display: -webkit-box;
   -webkit-box-orient: vertical;
   -webkit-line-clamp: 6;
+}
+
+.line-clamp-8 {
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 8;
 }
 
 .order-1 {
