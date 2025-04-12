@@ -6,8 +6,8 @@
 </basis>
 
 <basis core="dbsource" source="basiscore" lid="2" mid="1" name="db" catid="214240">
-    <member name="hot-news" type="list" link="article.bc" order="ord" size="567x345"
-        propertyid="7244,7249,3087660" perpage="6" />
+    <member name="hot-news" type="list" link="article.bc" order="ord" size="567x345" propertyid="7244,7249,3087660"
+        perpage="6" />
 </basis>
 <basis core="dbsource" source="basiscore" lid="2" mid="1" name="db" usedforid="[##cms.query.aid##]">
     <member name="our-history" type="view" />
@@ -18,35 +18,35 @@
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0,shrink-to-fit=no,viewport-fit=cover">
-        <!-- Title & Description -->
-        <title>[##cms.seo.title|(hotel booking - online booking - Alsama Tourism)##]</title>
-        <meta name="description"
-            content="[##cms.seo.description|(Experience the best hotels and the easiest online booking with Alsama Toursim)##]">
-        <!-- Taglist -->
-        <basis core="dbsource" source="hosting" name="tag" urlid="[##cms.seo.urlid##]">
-            <member type="list" name="list" request="taglist" preview=""></member>
-        </basis>
-        <basis core="print" datamembername="tag.list">
-            <face filter="key = 'canonical'">
-                <link rel="canonical" href="@value" />
-            </face>
-            <face>
-                <meta property="@key" content="@value" />
-            </face>
-        </basis>
-        <!-- pwa metatags -->
-        <basis core="call" file="pwa.inc" lid="2" />
-        <!-- define -->
-        <link rel="preload" as="image" imageSrcSet="image address" fetchpriority="high" />
-        <!-- common styles for all page -->
-        <link rel="stylesheet" href="https://cdn.basiscore.net/basisfly.com/css/swiper-bundle.min.css">
-        <basis core="call" file="style.inc" lid="2" />
-    </head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0,shrink-to-fit=no,viewport-fit=cover">
+    <!-- Title & Description -->
+    <title>[##cms.seo.title|(hotel booking - online booking - Alsama Tourism)##]</title>
+    <meta name="description"
+        content="[##cms.seo.description|(Experience the best hotels and the easiest online booking with Alsama Toursim)##]">
+    <!-- Taglist -->
+    <basis core="dbsource" source="hosting" name="tag" urlid="[##cms.seo.urlid##]">
+        <member type="list" name="list" request="taglist" preview=""></member>
+    </basis>
+    <basis core="print" datamembername="tag.list">
+        <face filter="key = 'canonical'">
+            <link rel="canonical" href="@value" />
+        </face>
+        <face>
+            <meta property="@key" content="@value" />
+        </face>
+    </basis>
+    <!-- pwa metatags -->
+    <basis core="call" file="pwa.inc" lid="2" />
+    <!-- define -->
+    <link rel="preload" as="image" imageSrcSet="image address" fetchpriority="high" />
+    <!-- common styles for all page -->
+    <link rel="stylesheet" href="https://cdn.basiscore.net/basisfly.com/css/swiper-bundle.min.css">
+    <basis core="call" file="style.inc" lid="2" />
 </head>
+
 <body>
     <basis core="call" file="header.inc" lid="2" />
     <main>
@@ -57,11 +57,12 @@
                         <h1 class="text-zinc-900 font-bold text-3xl mb-2">@column1</h1>
                     </face>
                 </basis>
-                <ul itemscope itemtype="https://schema.org/BreadcrumbList" class="relative flex items-center gap-1 mt-2">
+                <ul itemscope itemtype="https://schema.org/BreadcrumbList"
+                    class="relative flex items-center gap-1 mt-2">
                     <li class="inline-block font-normal text-white" itemprop="itemListElement" itemscope
                         itemtype="https://schema.org/ListItem">
-                        <a class="text-white hover:text-primary-300" itemprop="item" href="/"
-                            aria-label="home"><span itemprop="name">Home</span>
+                        <a class="text-white hover:text-primary-300" itemprop="item" href="/" aria-label="home"><span
+                                itemprop="name">Home</span>
                             <meta itemprop="position" content="1" />
                         </a>
                     </li>
@@ -89,7 +90,8 @@
                             <li class="flex gap-1 font-normal" itemprop="itemListElement" itemscope
                                 itemtype="https://schema.org/ListItem">
                                 <a class="text-white hover:text-primary-300" itemprop="item" href="@link"
-                                    aria-label="@title"><span class="text-white hover:text-primary-300" itemprop="name">@title</span>
+                                    aria-label="@title"><span class="text-white hover:text-primary-300"
+                                        itemprop="name">@title</span>
                                     <meta itemprop="position" content="@rownumber" />
                                 </a>
                                 <span class="text-white"> > </span>
@@ -102,66 +104,72 @@
                 <input
                     class="w-[418px] border border-solid border-primary-400 bg-primary-50 text-zinc-400 px-4 h-14 rounded-lg outline-none"
                     placeholder="Search blog" type="text" autocomplete="on" required name="search-content-name" />
-                    <button type="submit" class="relative group z-10 w-36 bg-primary-800 py-4 rounded-lg text-white">Search
-                        <div
+                <button type="submit" class="relative group z-10 w-36 bg-primary-800 py-4 rounded-lg text-white">Search
+                    <div
                         class="absolute inset-0 bg-[linear-gradient(270deg,_#FF3535_3.33%,_#CF1919_100%)] opacity-0 transition-opacity duration-300 group-hover:opacity-100 rounded-lg -z-10">
                     </div>
-                    </button>
-        </form>
+                </button>
+            </form>
             <basis core="tree" datamembername="article-list.cat" idcol="catid" parentidcol="parentid"
-            nullvalue="214233">
+                nullvalue="214233">
                 <layout>
                     <ul class="flex justify-center items-center gap-2 mt-16">
-                    @child
+                        @child
                     </ul>
                 </layout>
                 <face>
-                    <li
-                    class="article-li rounded-[50px] cursor-pointer bg-zinc-100 border border-zinc-300 py-2 px-5 text-zinc-500 text-sm transition-all duration-300 hover:bg-primary-300 hover:border-primary-700 hover:text-primary-800"
-                    data-id="@catid">
-                    @title
-                  </li>
+                    <li class="article-li rounded-[50px] cursor-pointer bg-zinc-100 border border-zinc-300 py-2 px-5 text-zinc-500 text-sm transition-all duration-300 hover:bg-primary-300 hover:border-primary-700 hover:text-primary-800"
+                        data-id="@catid">
+                        @title
+                    </li>
                 </face>
             </basis>
         </section>
-        <section class="mx-auto max-lg:w-[90%] max-xl:w-[97%] xl:max-w-7xl border-y border-solid border-zinc-300 mt-16 pt-6 pb-10">
+        <section
+            class="mx-auto max-lg:w-[90%] max-xl:w-[97%] xl:max-w-7xl border-y border-solid border-zinc-300 mt-16 pt-6 pb-10">
             <div class="flex items-center justify-between mb-4">
                 <div class="flex items-center gap-1">
                     <svg width="44" height="46">
-                    <use xlink:href="./images/sprite-icons.svg#icon-fire"></use>
-                </svg>
-                <div>
-                    <h2 class="font-bold text-gradient text-xl">Hot news</h2>
-                    <h3 class="text-zinc-900 text-sm">Read the latest news here</h3>
-                </div>
+                        <use xlink:href="./images/sprite-icons.svg#icon-fire"></use>
+                    </svg>
+                    <div>
+                        <h2 class="font-bold text-gradient text-xl">Hot news</h2>
+                        <h3 class="text-zinc-900 text-sm">Read the latest news here</h3>
+                    </div>
                 </div>
                 <div class="flex items-center gap-2">
-                    <div class="group swiper-button-prev-custom w-12 h-12 rounded-full bg-zinc-300 flex items-center justify-center transition-all duration-300 hover:bg-primary-900">
-                        <svg width="24" height="24" class="transition-all duration-300 group-hover:hidden group-hover:invisible group-hover:opacity-0">
+                    <div
+                        class="group swiper-button-prev-custom w-12 h-12 rounded-full bg-zinc-300 flex items-center justify-center transition-all duration-300 hover:bg-primary-900">
+                        <svg width="24" height="24"
+                            class="transition-all duration-300 group-hover:hidden group-hover:invisible group-hover:opacity-0">
                             <use xlink:href="./images/sprite-icons.svg#icon-chevron-left-zinc"></use>
-                            </svg>
-                            <svg width="24" height="24" class="hidden transition-all duration-300 invisible opacity-0 group-hover:visible group-hover:opacity-100 group-hover:block">
+                        </svg>
+                        <svg width="24" height="24"
+                            class="hidden transition-all duration-300 invisible opacity-0 group-hover:visible group-hover:opacity-100 group-hover:block">
                             <use xlink:href="./images/sprite-icons.svg#icon-chevron-left-white"></use>
-                            </svg>
+                        </svg>
                     </div>
-                    <div class="group swiper-button-next-custom w-12 h-12 rounded-full bg-zinc-300 flex items-center justify-center transition-all duration-300 hover:bg-primary-900">
+                    <div
+                        class="group swiper-button-next-custom w-12 h-12 rounded-full bg-zinc-300 flex items-center justify-center transition-all duration-300 hover:bg-primary-900">
 
-                    <svg width="24" height="24" class="transition-all duration-300 group-hover:hidden group-hover:invisible group-hover:opacity-0">
-                        <use xlink:href="./images/sprite-icons.svg#icon-chevron-right-zinc"></use>
+                        <svg width="24" height="24"
+                            class="transition-all duration-300 group-hover:hidden group-hover:invisible group-hover:opacity-0">
+                            <use xlink:href="./images/sprite-icons.svg#icon-chevron-right-zinc"></use>
                         </svg>
-                        <svg width="24" height="24" class="hidden transition-all duration-300 invisible opacity-0 group-hover:visible group-hover:opacity-100 group-hover:block">
-                        <use xlink:href="./images/sprite-icons.svg#icon-chevron-right-white"></use>
+                        <svg width="24" height="24"
+                            class="hidden transition-all duration-300 invisible opacity-0 group-hover:visible group-hover:opacity-100 group-hover:block">
+                            <use xlink:href="./images/sprite-icons.svg#icon-chevron-right-white"></use>
                         </svg>
                     </div>
-                    </div>
+                </div>
             </div>
             <div class="swiper swiper-article-list pb-14 mt-4">
                 <basis core="list" datamembername="db.hot-news">
                     <layout>
-                                        <!-- Additional required wrapper -->
-                <div class="swiper-wrapper">
-                    @child
-                </div>
+                        <!-- Additional required wrapper -->
+                        <div class="swiper-wrapper">
+                            @child
+                        </div>
                     </layout>
                     <face filter="link is null">
                         <div class="swiper-slide group">
@@ -182,7 +190,7 @@
                                             </svg>
                                             @prp_7249
                                         </span>
-    
+
                                         <span class="flex items-center text-sm text-zinc-900 gap-2">
                                             <svg width="24" height="24">
                                                 <use xlink:href="./images/sprite-icons.svg#icon-clock"></use>
@@ -220,7 +228,7 @@
                                             </svg>
                                             @prp_7249
                                         </span>
-    
+
                                         <span class="flex items-center text-sm text-zinc-900 gap-2">
                                             <svg width="24" height="24">
                                                 <use xlink:href="./images/sprite-icons.svg#icon-clock"></use>
@@ -271,4 +279,5 @@
     <script src="https://cdn.basiscore.net/basisfly.com/js/swiper-bundle.min.js"></script>
     <basis core="call" file="footer.inc" lid="2" />
 </body>
+
 </html>

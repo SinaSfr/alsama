@@ -137,38 +137,60 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 document.addEventListener("DOMContentLoaded", function () {
-  const menuButton = document.querySelector(".menu-button");
-  const menuDropdown = document.querySelector(".menu-dropdown");
-  const blueDropdown = document.querySelector(".blue-dropdown");
+  if (document.querySelector(".see-more-btn")) {
+    let seeMoreBtn = document.querySelector(".see-more-btn");
+    let aboutAlsama = document.querySelectorAll(".about-alsama");
 
-  menuButton.addEventListener("click", function (event) {
-    menuDropdown.classList.toggle("scale-y-0");
-    menuDropdown.classList.toggle("scale-y-100");
-    blueDropdown.classList.toggle("rotate-180");
+    seeMoreBtn.addEventListener("click", function () {
+      let isClamped = false;
 
-    event.stopPropagation();
-  });
-
-  document.addEventListener("click", function (event) {
-    if (
-      !menuDropdown.contains(event.target) &&
-      !menuButton.contains(event.target)
-    ) {
-      menuDropdown.classList.add("scale-y-0");
-      menuDropdown.classList.remove("scale-y-100");
-      blueDropdown.classList.remove("rotate-180");
-    }
-  });
-
-  const menuItems = menuDropdown.querySelectorAll("li");
-  menuItems.forEach(function (item) {
-    item.addEventListener("click", function () {
-      menuButton.querySelector(".new-text").innerHTML = item.innerHTML;
-      menuDropdown.classList.add("scale-y-0");
-      menuDropdown.classList.remove("scale-y-100");
-      blueDropdown.classList.remove("rotate-180");
+      aboutAlsama.forEach((item) => {
+        item.classList.toggle("line-clamp-6");
+        if (item.classList.contains("line-clamp-6")) {
+          isClamped = true;
+        }
+      });
+      seeMoreBtn.innerHTML = isClamped ? "Read more" : "Read less";
     });
-  });
+  }
+});
+
+document.addEventListener("DOMContentLoaded", function () {
+  if(document.querySelector(".blue-dropdown")){
+    const menuButton = document.querySelector(".menu-button");
+    const menuDropdown = document.querySelector(".menu-dropdown");
+    const blueDropdown = document.querySelector(".blue-dropdown");
+  
+    menuButton.addEventListener("click", function (event) {
+      menuDropdown.classList.toggle("scale-y-0");
+      menuDropdown.classList.toggle("scale-y-100");
+      blueDropdown.classList.toggle("rotate-180");
+  
+      event.stopPropagation();
+    });
+  
+    document.addEventListener("click", function (event) {
+      if (
+        !menuDropdown.contains(event.target) &&
+        !menuButton.contains(event.target)
+      ) {
+        menuDropdown.classList.add("scale-y-0");
+        menuDropdown.classList.remove("scale-y-100");
+        blueDropdown.classList.remove("rotate-180");
+      }
+    });
+  
+    const menuItems = menuDropdown.querySelectorAll("li");
+    menuItems.forEach(function (item) {
+      item.addEventListener("click", function () {
+        menuButton.querySelector(".new-text").innerHTML = item.innerHTML;
+        menuDropdown.classList.add("scale-y-0");
+        menuDropdown.classList.remove("scale-y-100");
+        blueDropdown.classList.remove("rotate-180");
+      });
+    });
+  }
+
 });
 
 document.addEventListener("DOMContentLoaded", function () {
@@ -455,3 +477,25 @@ prevEl: ".swiper-button-prev-custom",
 },
 });
 }
+if (document.querySelector(".swiper-article-list-mobile")) {
+  var swiperPopularDestinationMobile = new Swiper(".swiper-article-list-mobile", {
+  slidesPerView: 1,
+  speed: 400,
+  centeredSlides: false,
+  spaceBetween: 12,
+  grabCursor: true,
+  autoplay: {
+      delay: 4500,
+      disableOnInteraction: false,
+  },
+  loop: true,
+  pagination: {
+      el: ".swiper-pagination",
+      clickable: true,
+  },
+  navigation: {
+  nextEl: ".swiper-button-next-custom",
+  prevEl: ".swiper-button-prev-custom",
+  },
+  });
+  }

@@ -2,7 +2,7 @@
     <member name="cat" type="tree" request="cat" parentid="214205" order="ord"></member>
 </basis>
 <basis core="dbsource" source="basiscore" lid="2" mid="1" name="db" catid="214195">
-    <member name="best-hotel" type="list" link="article.bc" order="ord" size="246x278"
+    <member name="best-hotel" type="list" link="hotel.bc" order="ord" size="246x278"
         propertyid="3087651,3087650,3087653,3087652" pageno="[##cms.query.pagenum|(1)##]" perpage="8" />
 </basis>
 <basis core="dbsource" source="basiscore" lid="2" mid="1" name="db" catid="214241">
@@ -17,6 +17,9 @@
 </basis>
 <basis core="dbsource" source="basiscore" lid="2" mid="1" name="db" usedforid="2376314">
     <member name="our-history" type="view" />
+</basis>
+<basis core="dbsource" source="basiscore" lid="2" mid="1" name="db" usedforid="2376484">
+    <member name="offer" type="view" />
 </basis>
 <!DOCTYPE html>
 <html lang="en">
@@ -110,9 +113,18 @@
                 <div class="relative flex flex-1 flex-col">
                     <h3 class="text-white text-[64px] leading-[64px]">Have a great</h3>
                     <h1 class="text-white font-bold text-[64px] leading-[68px]">travel experience.</h1>
-                    <div
-                        class="text-white text-sm rounded-lg self-start bg-[linear-gradient(270deg,_#FF3535_3.33%,_#CF1919_100%)] flex justify-center p-2 mt-14">
-                        20% discount until the end of the month.</div>
+                    <basis core="print" datamembername="db.offer">
+                        <layout>
+                            <div
+                            class="text-white text-sm rounded-lg self-start bg-[linear-gradient(270deg,_#FF3535_3.33%,_#CF1919_100%)] flex justify-center p-2 mt-14">
+                            @child
+                        </div>
+                        </layout>
+                        <face filter="TypeID in(129)">
+                            <span>@largetext</span>
+                        </face>
+                    </basis>
+
                 </div>
                 <!-- search engine  -->
                 <section id="search-box" class="load-search-box-in-condition hotel-search-engine search-box-container en flex-[1.33]">
@@ -198,13 +210,13 @@
                                     <h2 class="font-bold text-xl text-white">@title</h2>
                                     <div
                                         class="text-white text-sm text-center rounded-[38px] py-1 w-16 bg-[linear-gradient(270deg,_#FF3535_3.33%,_#CF1919_100%)]">
-                                        @prp_3087652% off</div>
+                                        @prp_3087652 off</div>
                                     <div class="flex items-center justify-between w-full">
                                         <div class="flex items-center gap-1">
-                                            <span class="text-xs text-zinc-400">@prp_3087650$</span>
-                                            <span class="text-xl font-bold text-white">@prp_3087653$</span>
+                                            <span class="text-xs text-zinc-400">@prp_3087650</span>
+                                            <span class="text-xl font-bold text-white">@prp_3087653</span>
                                         </div>
-                                        <a href="/article.bc?id=@id"
+                                        <a href="/hotel.bc?id=@id"
                                             class="relative group z-10 overflow-hidden flex items-center justify-center w-12 h-12 rounded-full bg-primary-800">
                                             <svg width="24" height="24">
                                                 <use xlink:href="./images/sprite-icons.svg#icon-chevron-right-white">
@@ -244,11 +256,11 @@
                                     <h2 class="font-bold text-xl text-white">@title</h2>
                                     <div
                                         class="text-white text-sm text-center rounded-[38px] py-1 w-16 bg-[linear-gradient(270deg,_#FF3535_3.33%,_#CF1919_100%)]">
-                                        @prp_3087652% off</div>
+                                        @prp_3087652 off</div>
                                     <div class="flex items-center justify-between w-full">
                                         <div class="flex items-center gap-1">
-                                            <span class="text-xs text-zinc-400">@prp_3087650$</span>
-                                            <span class="text-xl font-bold text-white">@prp_3087653$</span>
+                                            <span class="text-xs text-zinc-400">@prp_3087650</span>
+                                            <span class="text-xl font-bold text-white">@prp_3087653</span>
                                         </div>
                                         <a href="@link"
                                             class="relative group z-10 overflow-hidden flex items-center justify-center w-12 h-12 rounded-full bg-primary-800">
@@ -378,9 +390,9 @@
                                     width="100%" height="236" loading="lazy">
                                 <div class="absolute inset-0 mx-auto w-[90%] top-4">
                                     <div
-                                        class="text-white text-sm text-center rounded-[38px] py-1 w-20 bg-[linear-gradient(270deg,_#FF3535_3.33%,_#CF1919_100%)]">
+                                        class="hidden text-white text-sm text-center rounded-[38px] py-1 w-20 bg-[linear-gradient(270deg,_#FF3535_3.33%,_#CF1919_100%)]">
                                         30% off</div>
-                                    <div class="mt-32 flex items-center justify-between">
+                                    <div class="mt-39 flex items-center justify-between">
                                         <div>
                                             <h3 class="text-sm text-white mb-1">Travel</h3>
                                             <h2 class="text-white font-bold text-2xl">@title</h2>
@@ -411,9 +423,9 @@
                                     width="100%" height="236" loading="lazy">
                                 <div class="absolute inset-0 mx-auto w-[90%] top-4">
                                     <div
-                                        class="text-white text-sm text-center rounded-[38px] py-1 w-20 bg-[linear-gradient(270deg,_#FF3535_3.33%,_#CF1919_100%)]">
+                                        class="hidden text-white text-sm text-center rounded-[38px] py-1 w-20 bg-[linear-gradient(270deg,_#FF3535_3.33%,_#CF1919_100%)]">
                                         30% off</div>
-                                    <div class="mt-32 flex items-center justify-between">
+                                    <div class="mt-39 flex items-center justify-between">
                                         <div>
                                             <h3 class="text-sm text-white mb-1">Travel</h3>
                                             <h2 class="text-white font-bold text-2xl">@title</h2>
@@ -481,7 +493,7 @@
                     </layout>
                     <face>
                         <li
-                        class="tour-li rounded-[50px] cursor-pointer bg-white py-2 px-5 text-zinc-500 text-sm"
+                        class="tour-li rounded-[50px] cursor-pointer bg-white py-2 px-5 text-zinc-500 text-sm transition-all duration-300 hover:bg-primary-800 hover:text-white"
                         data-id="@catid">
                         @title
                       </li>
@@ -494,15 +506,22 @@
             </div>
         </section>
 
+
         <section class="flex mx-auto max-lg:w-[90%] max-xl:w-[97%] xl:max-w-7xl mt-24 rounded-3xl overflow-hidden">
             <div class="relative flex-[2.62]">
                 <div class="bg-specialcolor-1 absolute inset-0 w-full h-full"></div>
                 <img src="[##cms.cms.cdn##]/images/offer.jpg" class="h-[370px] object-cover" alt="" width="100%" height="370"
                     loading="lazy">
-                <div class="absolute top-12 left-14">
-                    <h2 class="text-[64px] leading-[64px] text-white w-[626px]">Experience a deloghful <span
-                            class="text-orange-500">summer</span></h2>
-                </div>
+                    <basis core="print" datamembername="db.banner">
+                        <layout>
+                            <div class="absolute top-12 left-14">
+                                @child
+                            </div>
+                        </layout>
+                        <face filter="TypeID in(150)">
+                            <h2 class="text-[64px] leading-[64px] text-white w-[626px]">@text</h2>
+                        </face>
+                    </basis>
             </div>
             <div class="bg-zinc-100 px-9 py-10 flex-1">
                 <div class="flex flex-col">
@@ -524,7 +543,7 @@
             <div class="flex items-center justify-between">
                 <div>
                     <h2 class="font-bold text-zinc-900 text-xl">Travel magazine</h2>
-                    <a href="" class="relative group text-sm text-blue-600">View All blog
+                    <a href="/blog" class="relative group text-sm text-blue-600">View All blog
                         <span class="absolute -bottom-1 left-0 w-0 transition-all duration-300 h-px bg-primary-500 group-hover:w-full"></span>
                     </a>
                 </div>

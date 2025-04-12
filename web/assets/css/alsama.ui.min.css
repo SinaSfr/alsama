@@ -254,16 +254,16 @@
     margin-top: 8rem;
   }
   
+  .mt-39 {
+    margin-top: 9.75rem;
+}
+
+  .mt-44 {
+    margin-top: 11rem /* 176px */;
+}
+
   .mt-4 {
     margin-top: 1rem;
-  }
-  
-  .mt-6 {
-    margin-top: 1.5rem;
-  }
-  
-  .mt-7 {
-    margin-top: 1.75rem;
   }
   
   .mt-8 {
@@ -282,6 +282,10 @@
     display: grid;
   }
   
+  .min-h-\[100px\] {
+    min-height: 100px;
+}
+
   .h-12 {
     height: 3rem;
   }
@@ -493,6 +497,27 @@
   .origin-top {
     transform-origin: top;
   }
+
+  .line-clamp-1 {
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 1;
+}
+
+.line-clamp-3 {
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+}
+
+.line-clamp-5 {
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 5;
+}
   
   .rotate-180 {
     --tw-rotate: 180deg;
@@ -1241,8 +1266,8 @@
     display: none;
   }
   
-  .group:hover .group-hover\:-translate-x-20 {
-    --tw-translate-x: -5rem;
+  .group:hover .group-hover\:-translate-x-16 {
+    --tw-translate-x: -4rem;
     transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
   }
   
@@ -1519,6 +1544,7 @@
   }
   .Basis_Calendar_Box {
     font-family: "Dana" !important;
+    margin-top: -3.25rem;
   }
   .calendar-apply-date,
   .calendar-switch,

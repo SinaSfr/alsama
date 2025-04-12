@@ -632,6 +632,10 @@ body {
   margin-top: 0.75rem;
 }
 
+.mt-6 {
+  margin-top: 1.5rem;
+}
+
 .mt-7 {
   margin-top: 1.75rem;
 }
@@ -1229,6 +1233,7 @@ body {
     width: 100%;
   }
 
+  
   .lg\:flex-1 {
     flex: 1 1 0%;
   }
@@ -1263,6 +1268,10 @@ body {
   .lg\:gap-2 {
     gap: 0.5rem;
   }
+
+  .lg\:gap-6 {
+    gap: 1.5rem /* 24px */;
+}
 
   .lg\:gap-20 {
     gap: 5rem;
@@ -1361,5 +1370,6 @@ body {
 }
 
 .footer-form [data-bc-schema-main-container] {
-  flex: 1;
+  flex: 1.5;
+  margin-right: 8px;
 }
