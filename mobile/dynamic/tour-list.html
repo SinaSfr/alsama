@@ -5,148 +5,140 @@
     <member name="navigation" type="tree" request="navcatid" parentid="[##cms.query.catid##]" />
 </basis>
 <basis core="dbsource" source="basiscore" lid="2" mid="20" name="db" catid="[##cms.query.catid##]">
-    <member name="tour-list" type="list" link="tour.bc" order="ord" size="195x128"
+    <member name="tour-list" type="list" link="tour.bc" order="ord" size="147x128"
         propertyid="3087658,3087659,10000504,8181" pageno="[##cms.query.pagenum|(1)##]" perpage="21" />
     <member name="paging" type="list" request="paging" count="3" parentname="tour-list" />
 </basis>
 <basis core="dbsource" source="basiscore" mid="20" name="list" lid="2" schemaid="987" term="[##cms.query.term##]">
     <member name="airline" type="list" request="spelist" />
-</basis>
-<basis core="inlinesource" name="joining">
+  </basis>
+  <basis core="inlinesource" name="joining">
     <member name="list" lefttblcol="db.tour-list.prp_10000504" righttblcol="list.airline.name" format="join"
         jointype="leftjoin" />
-</basis>
+  </basis>
 <basis core="dbsource" source="basiscore" lid="2" mid="1" name="db" usedforid="[##cms.query.aid##]">
     <member name="p-undertour" type="view" />
 </basis>
 <basis core="dbsource" source="media" lid="2" name="db" usedforid="[##cms.query.aid##]" sourcemid="article">
     <member type="list" name="gallery" format="4" order="ord"></member>
-</basis>
+    </basis>
 
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0,shrink-to-fit=no,viewport-fit=cover">
-    <!-- Title & Description -->
-    <title>[##cms.seo.title|(hotel booking - online booking - Alsama Tourism)##]</title>
-    <meta name="description"
-        content="[##cms.seo.description|(Experience the best hotels and the easiest online booking with Alsama Toursim)##]">
-    <!-- Taglist -->
-    <basis core="dbsource" source="hosting" name="tag" urlid="[##cms.seo.urlid##]">
-        <member type="list" name="list" request="taglist" preview=""></member>
-    </basis>
-    <basis core="print" datamembername="tag.list">
-        <face filter="key = 'canonical'">
-            <link rel="canonical" href="@value" />
-        </face>
-        <face>
-            <meta property="@key" content="@value" />
-        </face>
-    </basis>
-    <!-- pwa metatags -->
-    <basis core="call" file="pwa.inc" lid="2" />
-    <!-- define -->
-    <link rel="preload" as="image" imageSrcSet="image address" fetchpriority="high" />
-    <!-- common styles for all page -->
-    <basis core="call" file="style.inc" lid="2" />
-</head>
-
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0,shrink-to-fit=no,viewport-fit=cover">
+        <!-- Title & Description -->
+        <title>[##cms.seo.title|(hotel booking - online booking - Alsama Tourism)##]</title>
+        <meta name="description"
+            content="[##cms.seo.description|(Experience the best hotels and the easiest online booking with Alsama Toursim)##]">
+        <!-- Taglist -->
+        <basis core="dbsource" source="hosting" name="tag" urlid="[##cms.seo.urlid##]">
+            <member type="list" name="list" request="taglist" preview=""></member>
+        </basis>
+        <basis core="print" datamembername="tag.list">
+            <face filter="key = 'canonical'">
+                <link rel="canonical" href="@value" />
+            </face>
+            <face>
+                <meta property="@key" content="@value" />
+            </face>
+        </basis>
+        <!-- pwa metatags -->
+        <basis core="call" file="pwa.inc" lid="2" pageindex="[##cms.cms.pageindex##]"/>
+        <!-- define -->
+        <link rel="preload" as="image" imageSrcSet="image address" fetchpriority="high" />
+        <!-- common styles for all page -->
+        <basis core="call" file="style.inc" lid="2" pageindex="[##cms.cms.pageindex##]"/>
+    </head>
 <body>
-    <basis core="call" file="header.inc" lid="2" />
+    <basis core="call" file="header.inc" lid="2" pageindex="[##cms.cms.pageindex##]"/>
     <main>
-        <section class="flex items-center relative">
+        <section class=" flex items-center relative">
             <basis core="print" datamembername="db.gallery">
                 <face>
-                    <img src="/@largeIMG" alt="@name" class="img-responsive h-[397px] object-cover" width="100%" height="397"
+                    <img src="/@largeIMG" alt="@name" class="img-responsive h-[269px] object-cover" width="100%" height="269"
                     loading="lazy">
                 </face>
             </basis>
             <div class="bg-specialcolor-1 absolute inset-0 w-full h-full"></div>
-            <div
-                class="mx-auto max-lg:w-[90%] max-xl:w-[97%] xl:max-w-7xl flex flex-col items-center absolute left-0 right-0">
-                <h2 class="text-white text-[64px] leading-[64px] drop-shadow-[2px_4px_6px_rgba(0,0,0,0.9)]">travel</h2>
+            <div class="mx-auto max-lg:w-[90%] max-xl:w-[97%] xl:max-w-7xl flex flex-col items-center">
+                <h2 class="text-white font-medium text-xl drop-shadow-[2px_4px_6px_rgba(0,0,0,0.9)]">travel</h2>
+                
                 <basis core="print" datamembername="db.scalar">
                     <face>
-                        <h1
-                            class="text-white font-bold text-[64px] leading-[64px] drop-shadow-[2px_4px_6px_rgba(0,0,0,0.9)]">
-                            @column1</h1>
+                        <h1 class="text-white font-bold text-3xl drop-shadow-[2px_4px_6px_rgba(0,0,0,0.9)]">@column1</h1>
                     </face>
                 </basis>
                 <ul itemscope itemtype="https://schema.org/BreadcrumbList"
-                    class="relative flex items-center gap-1 mt-2">
-                    <li class="inline-block font-normal text-white" itemprop="itemListElement" itemscope
-                        itemtype="https://schema.org/ListItem">
-                        <a class="text-white hover:text-primary-300" itemprop="item" href="/" aria-label="home"><span
-                                itemprop="name">Home</span>
-                            <meta itemprop="position" content="1" />
-                        </a>
-                    </li>
-                    <span class="text-white"> > </span>
-                    <basis core="print" datamembername="db.navigation">
-                        <face filter="RowNumber=max(RowNumber) and parentcatid<>214169">
-                            <li class="inline-block font-normal text-white" itemprop="itemListElement" itemscope
-                                itemtype="https://schema.org/ListItem">
-                                <span itemprop="name">@title</span>
+                class="relative flex items-center gap-1 mt-3">
+                <li class="inline-block font-normal text-white" itemprop="itemListElement" itemscope
+                    itemtype="https://schema.org/ListItem">
+                    <a class="text-white hover:text-primary-300" itemprop="item" href="/" aria-label="home"><span
+                            itemprop="name">Home</span>
+                        <meta itemprop="position" content="1" />
+                    </a>
+                </li>
+                <span class="text-white"> > </span>
+                <basis core="print" datamembername="db.navigation">
+                    <face filter="RowNumber=max(RowNumber) and parentcatid<>214169">
+                        <li class="inline-block font-normal text-white" itemprop="itemListElement" itemscope
+                            itemtype="https://schema.org/ListItem">
+                            <span itemprop="name">@title</span>
+                            <meta itemprop="position" content="@rownumber" />
+                        </li>
+                    </face>
+                    <face filter="link is null and parentcatid<>214169">
+                        <li class="flex gap-1 font-normal text-white" itemprop="itemListElement" itemscope
+                            itemtype="https://schema.org/ListItem">
+                            <a class="text-white hover:text-primary-300" itemprop="item"
+                                href="/tour-list.bc?catid=@parentcatid" aria-label="@title"><span
+                                    itemprop="name">@title</span>
                                 <meta itemprop="position" content="@rownumber" />
-                            </li>
-                        </face>
-                        <face filter="link is null and parentcatid<>214169">
-                            <li class="flex gap-1 font-normal text-white" itemprop="itemListElement" itemscope
-                                itemtype="https://schema.org/ListItem">
-                                <a class="text-white hover:text-primary-300" itemprop="item"
-                                    href="/tour-list.bc?catid=@parentcatid" aria-label="@title"><span
-                                        itemprop="name">@title</span>
-                                    <meta itemprop="position" content="@rownumber" />
-                                </a>
-                                <span class="text-white"> > </span>
-                            </li>
-                        </face>
-                        <face filter="parentcatid<>214169">
-                            <li class="flex gap-1 font-normal" itemprop="itemListElement" itemscope
-                                itemtype="https://schema.org/ListItem">
-                                <a class="text-white hover:text-primary-300" itemprop="item" href="@link"
-                                    aria-label="@title"><span class="text-white hover:text-primary-300"
-                                        itemprop="name">@title</span>
-                                    <meta itemprop="position" content="@rownumber" />
-                                </a>
-                                <span class="text-white"> > </span>
-                            </li>
-                        </face>
-                    </basis>
-                </ul>
+                            </a>
+                            <span class="text-white"> > </span>
+                        </li>
+                    </face>
+                    <face filter="parentcatid<>214169">
+                        <li class="flex gap-1 font-normal" itemprop="itemListElement" itemscope
+                            itemtype="https://schema.org/ListItem">
+                            <a class="text-white hover:text-primary-300" itemprop="item" href="@link"
+                                aria-label="@title"><span class="text-white hover:text-primary-300"
+                                    itemprop="name">@title</span>
+                                <meta itemprop="position" content="@rownumber" />
+                            </a>
+                            <span class="text-white"> > </span>
+                        </li>
+                    </face>
+                </basis>
+            </ul>
             </div>
         </section>
-        <section class="mx-auto max-lg:w-[90%] max-xl:w-[97%] xl:max-w-7xl mt-8">
+        <section class="mx-auto max-lg:w-[90%] max-xl:w-[97%] xl:max-w-7xl mt-7">
             <basis core="list" datamembername="joining.list">
                 <layout>
-                    <div class="grid grid-cols-3 gap-x-7 gap-y-3">
+                    <div class="flex flex-col gap-7">
                         @child
                     </div>
                 </layout>
                 <face filter="link is null">
-                    <a href="/tour.bc?id=@id" class="flex items-center gap-2 group">
+                    <a href="/tour.bc?id=@id" class="flex items-center gap-2">
                         <div class="flex-1">
-                            <img src="@db.tour-list.00195X00128prp"
-                                class="h-32 object-cover rounded-lg transition-all duration-300 group-hover:grayscale"
-                                alt="@db.tour-list.title" width="100%" height="128" loading="lazy">
+                            <img src="@db.tour-list.00147X00128prp" class="h-32 object-cover rounded-lg" alt="@db.tour-list.title" width="100%" height="128" loading="lazy">
                         </div>
                         <div class="flex-1">
-                            <h2 class="text-zinc-900 font-bold mb-2 text-xl">@db.tour-list.title</h2>
+                            <h2 class="text-zinc-900 font-medium mb-2">@db.tour-list.title</h2>
                             <div class="flex justify-between items-center mb-2">
                                 <span class="text-sm text-zinc-900">@db.tour-list.prp_3087658</span>
-                                <svg width="93" height="1">
-                                    <use xlink:href="./images/sprite-icons.svg#icon-dash-border-desktop"></use>
+                                <svg width="31" height="1">
+                                    <use xlink:href="./images/sprite-icons.svg#icon-dash-border"></use>
                                 </svg>
                                 <span class="text-sm text-zinc-900">@db.tour-list.prp_3087659</span>
                             </div>
-                            <img src="@list.airline.pic" class="object-cover" alt="@db.tour-list.prp_10000504"
-                                width="56" height="14" loading="lazy">
+                            <img src="@list.airline.pic" class="h-4 object-cover" alt="@db.tour-list.prp_10000504" width="56" height="14" loading="lazy">
                             <div class="flex items-center justify-between">
                                 <span class="text-zinc-800 font-medium">@db.tour-list.prp_8181</span>
-                                <svg width="48" height="48"
-                                    class="transition-all duration-300 group-hover:rotate-180 group-hover:-translate-x-16">
+                                <svg width="48" height="48">
                                     <use xlink:href="./images/sprite-icons.svg#icon-chevron-right-blue"></use>
                                 </svg>
                             </div>
@@ -154,27 +146,23 @@
                     </a>
                 </face>
                 <face>
-                    <a href="@db.tour-list.link" class="flex items-center gap-2 group">
+                    <a href="@db.tour-list.link" class="flex items-center gap-2">
                         <div class="flex-1">
-                            <img src="@db.tour-list.00195X00128prp"
-                                class="h-32 object-cover rounded-lg transition-all duration-300 group-hover:grayscale"
-                                alt="@db.tour-list.title" width="100%" height="128" loading="lazy">
+                            <img src="@db.tour-list.00147X00128prp" class="h-32 object-cover rounded-lg" alt="@db.tour-list.title" width="100%" height="128" loading="lazy">
                         </div>
                         <div class="flex-1">
-                            <h2 class="text-zinc-900 font-bold mb-2 text-xl">@db.tour-list.title</h2>
+                            <h2 class="text-zinc-900 font-medium mb-2">@db.tour-list.title</h2>
                             <div class="flex justify-between items-center mb-2">
                                 <span class="text-sm text-zinc-900">@db.tour-list.prp_3087658</span>
-                                <svg width="93" height="1">
-                                    <use xlink:href="./images/sprite-icons.svg#icon-dash-border-desktop"></use>
+                                <svg width="31" height="1">
+                                    <use xlink:href="./images/sprite-icons.svg#icon-dash-border"></use>
                                 </svg>
                                 <span class="text-sm text-zinc-900">@db.tour-list.prp_3087659</span>
                             </div>
-                            <img src="@list.airline.pic" class="object-cover" alt="@db.tour-list.prp_10000504"
-                                width="56" height="14" loading="lazy">
+                            <img src="@list.airline.pic" class="h-4 object-cover" alt="@db.tour-list.prp_10000504" width="56" height="14" loading="lazy">
                             <div class="flex items-center justify-between">
                                 <span class="text-zinc-800 font-medium">@db.tour-list.prp_8181</span>
-                                <svg width="48" height="48"
-                                    class="transition-all duration-300 group-hover:rotate-180 group-hover:-translate-x-16">
+                                <svg width="48" height="48">
                                     <use xlink:href="./images/sprite-icons.svg#icon-chevron-right-blue"></use>
                                 </svg>
                             </div>
@@ -183,7 +171,7 @@
                 </face>
             </basis>
 
-            <div id="paging" class="flex justify-center mt-24">
+            <div id="paging" class="flex justify-center mt-9">
                 <ul class="flex items-center gap-1 cd-pagination no-space dir-ltr" id="wibpaging">
                     <basis core="print" datamembername="db.paging">
                         <face filter="(@sta='pre')and('[##cms.cms.pageurl##]'='')">
@@ -276,7 +264,7 @@
         </section>
         <basis core="print" datamembername="db.p-undertour">
             <layout>
-                <section class="mx-auto max-lg:w-[90%] max-xl:w-[97%] xl:max-w-7xl my-24">
+                <section class="mx-auto max-lg:w-[90%] max-xl:w-[97%] xl:max-w-7xl mt-9 mb-6">
                     @child
                 </section>
             </layout>
@@ -291,7 +279,6 @@
         </basis>
 
     </main>
-    <basis core="call" file="footer.inc" lid="2" />
+    <basis core="call" file="footer.inc" lid="2" pageindex="[##cms.cms.pageindex##]"/>
 </body>
-
 </html>

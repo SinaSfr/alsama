@@ -286,6 +286,10 @@
     min-height: 100px;
 }
 
+.h-11 {
+  height: 2.75rem;
+}
+
   .h-12 {
     height: 3rem;
   }
@@ -444,10 +448,6 @@
   
   .w-\[98\%\] {
     width: 98%;
-  }
-  
-  .w-full {
-    width: 100%;
   }
   
   .w-px {
@@ -750,6 +750,10 @@
   
   .bg-specialcolor-3 {
     background-color: var(--special-3);
+  }
+
+  .bg-specialcolor-4 {
+    background-color: var(--special-4);
   }
   
   .bg-white {
@@ -1236,6 +1240,13 @@
     color: rgb(255 255 255 / var(--tw-text-opacity, 1));
   }
   
+  .hover\:border:hover {
+    border-width: 1px;
+}
+
+.hover\:border-dashed:hover {
+  border-style: dashed;
+}
   .hover\:border-primary-700:hover {
     border-color: var(--primary-700);
 }
@@ -1500,24 +1511,24 @@
   }
       
   .Basis_Calendar .selected_date {
-    background: var(--secondary) !important;
+    background: var(--primary) !important;
   }
   .confirm-date-content button:hover {
-    background: var(--secondary);
+    background: var(--primary);
   }
   .confirm-date-content button {
     background: var(--primary);
     color: #fff;
   }
   .calendar-apply-date:hover {
-    background: var(--secondary);
+    background: var(--primary);
   }
   .calendar-apply-date {
     background: var(--primary);
     color: #fff;
   }
   .Basis_Calendar .selected_day {
-    background: var(--secondary);
+    background: var(--primary);
   }
   .day.days_available {
     background: var(--primary);
@@ -1530,7 +1541,7 @@
     color: var(--primary);
   }
   .Basis_Calendar .current_day::after {
-    border-color: var(--secondary) transparent transparent;
+    border-color: var(--primary) transparent transparent;
   }
   .Basis_Calendar
     .month_day_list

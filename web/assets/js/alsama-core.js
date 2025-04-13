@@ -183,6 +183,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const menuItems = menuDropdown.querySelectorAll("li");
     menuItems.forEach(function (item) {
       item.addEventListener("click", function () {
+        event.stopPropagation(); 
         menuButton.querySelector(".new-text").innerHTML = item.innerHTML;
         menuDropdown.classList.add("scale-y-0");
         menuDropdown.classList.remove("scale-y-100");
@@ -194,39 +195,79 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 document.addEventListener("DOMContentLoaded", function () {
+const textDiv = document.querySelector(".orange-text");
+
+if (textDiv) {
+    const words = textDiv.textContent.trim().split(" ");
+    if (words.length > 1) {
+        const lastWord = words.pop();
+        textDiv.innerHTML = `${words.join(" ")} <span class="text-orange-500">${lastWord}</span>`;
+    }
+}
+
+});
+
+document.addEventListener("DOMContentLoaded", function () {
   const fetchContentTour = document.querySelector(".fetch-content-tour");
   const tourLi = document.querySelectorAll(".tour-li");
 
+  tourLi.forEach((item) => {
+    if (item.textContent.trim() === "Dubai") {
+      item.style.backgroundColor = "#3469B4";
+      item.style.color = "#fff";
+    }
+  });
+
+  const newText = document.querySelector(".new-text");
+  if (newText) {
+    newText.innerHTML = "Dubai";
+  }
+
   if (fetchContentTour) {
     async function firstContent() {
-      fetchContentTour.innerHTML = '<div class="flex justify-center mb-6"><span class="tour-loader"></span></div>';
+      fetchContentTour.innerHTML =
+        '<div class="flex justify-center mb-6"><span class="tour-loader"></span></div>';
       try {
-        const firstResponse = await fetch("/tour-load-items.bc?catid=214205");
+        const firstResponse = await fetch("/tour-load-items.bc?catid=214206");
         if (!firstResponse.ok) {
           throw new Error(`HTTP error! Status: ${firstResponse.status}`);
         }
         const firstData = await firstResponse.text();
         fetchContentTour.innerHTML = firstData;
+
+        const viewMoreLink = document.querySelector(".view-more");
+        if (viewMoreLink) {
+          viewMoreLink.setAttribute("href", "/tour-list.bc?catid=214206");
+        }
       } catch (error) {
         console.error("Fetch failed:", error);
         fetchContentTour.innerHTML =
           "<p>Error loading data: " + error.message + "</p>";
       }
     }
+
     firstContent();
 
     tourLi.forEach((item) => {
       item.addEventListener("click", function () {
+        const cmsQuery = item.getAttribute("data-id");
+
         tourLi.forEach((li) => {
           li.style.backgroundColor = "";
           li.style.color = "";
         });
 
-        item.style.backgroundColor = "#3469B4";
-        item.style.color = "#fff";
+        tourLi.forEach((li) => {
+          if (li.getAttribute("data-id") === cmsQuery) {
+            li.style.backgroundColor = "#3469B4";
+            li.style.color = "#fff";
+          }
+        });
 
-        let cmsQuery = item.getAttribute("data-id");
-
+        if (newText) {
+          newText.innerHTML = item.textContent.trim();
+        }
+        
         async function secondContent() {
           fetchContentTour.innerHTML =
             '<div class="flex justify-center mb-6"><span class="tour-loader"></span></div>';
@@ -239,17 +280,24 @@ document.addEventListener("DOMContentLoaded", function () {
             }
             const firstData = await firstResponse.text();
             fetchContentTour.innerHTML = firstData;
+
+            const viewMoreLink = document.querySelector(".view-more");
+            if (viewMoreLink) {
+              viewMoreLink.setAttribute("href", `/tour-list.bc?catid=${cmsQuery}`);
+            }
           } catch (error) {
             console.error("Fetch failed:", error);
             fetchContentTour.innerHTML =
               "<p>Error loading data: " + error.message + "</p>";
           }
         }
+
         secondContent();
       });
     });
   }
 });
+
 
 document.addEventListener("DOMContentLoaded", function () {
   const fetchContentArticle = document.querySelector(".fetch-content-article");
@@ -434,7 +482,7 @@ var swiperTravelMagazine = new Swiper(".swiper-travel-magazine", {
 });
 }
 if (document.querySelector(".swiper-best-hotel-list")) {
-var swiper = new Swiper(".swiper-best-hotel-list", {
+var swiperBestHotelList = new Swiper(".swiper-best-hotel-list", {
     slidesPerView: 4,
     speed: 400,
     centeredSlides: false,
@@ -456,7 +504,7 @@ var swiper = new Swiper(".swiper-best-hotel-list", {
 });
 }
 if (document.querySelector(".swiper-article-list")) {
-var swiperPopularDestination = new Swiper(".swiper-article-list", {
+var swiperArticleList = new Swiper(".swiper-article-list", {
 slidesPerView: 1,
 speed: 400,
 centeredSlides: false,
@@ -478,7 +526,7 @@ prevEl: ".swiper-button-prev-custom",
 });
 }
 if (document.querySelector(".swiper-article-list-mobile")) {
-  var swiperPopularDestinationMobile = new Swiper(".swiper-article-list-mobile", {
+  var swiperArticleListMobile = new Swiper(".swiper-article-list-mobile", {
   slidesPerView: 1,
   speed: 400,
   centeredSlides: false,
@@ -499,3 +547,39 @@ if (document.querySelector(".swiper-article-list-mobile")) {
   },
   });
   }
+  if (document.querySelector(".swiper-best-hotel-mobile")) {
+  var swiperBestHotelMobile = new Swiper(".swiper-best-hotel-mobile", {
+    slidesPerView: 1.3,
+    speed: 400,
+    centeredSlides: false,
+    spaceBetween: 12,
+    grabCursor: true,
+    autoplay: {
+      delay: 2500,
+      disableOnInteraction: false,
+    },
+    loop: true,
+    pagination: {
+      el: ".swiper-pagination",
+      clickable: true,
+    },
+  });
+}
+if (document.querySelector(".swiper-travel-magazine-mobile")) {
+  var swiperTravelMagazineMobile = new Swiper(".swiper-travel-magazine-mobile", {
+    slidesPerView: 1,
+    speed: 400,
+    centeredSlides: false,
+    spaceBetween: 12,
+    grabCursor: true,
+    autoplay: {
+      delay: 2500,
+      disableOnInteraction: false,
+    },
+    loop: true,
+    pagination: {
+      el: ".swiper-pagination",
+      clickable: true,
+    },
+  });
+}

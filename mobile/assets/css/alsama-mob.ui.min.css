@@ -1108,3 +1108,171 @@ body {
     max-width: 80rem;
   }
 }
+
+
+.search-engine-loader {
+  animation: rotate 1s infinite;
+  height: 50px;
+  width: 50px;
+}
+
+.search-engine-loader:before,
+.search-engine-loader:after {
+  border-radius: 50%;
+  content: "";
+  display: block;
+  height: 20px;
+  width: 20px;
+}
+.search-engine-loader:before {
+  animation: ball1 1s infinite;
+  background-color: #294c94;
+  box-shadow: 30px 0 0 #ff3d00;
+  margin-bottom: 10px;
+}
+.search-engine-loader:after {
+  animation: ball2 1s infinite;
+  background-color: #ff3d00;
+  box-shadow: 30px 0 0 #294c94;
+}
+
+@keyframes rotate {
+  0% { transform: rotate(0deg) scale(0.8) }
+  50% { transform: rotate(360deg) scale(1.2) }
+  100% { transform: rotate(720deg) scale(0.8) }
+}
+
+@keyframes ball1 {
+  0% {
+    box-shadow: 30px 0 0 #ff3d00;
+  }
+  50% {
+    box-shadow: 0 0 0 #ff3d00;
+    margin-bottom: 0;
+    transform: translate(15px, 15px);
+  }
+  100% {
+    box-shadow: 30px 0 0 #ff3d00;
+    margin-bottom: 10px;
+  }
+}
+
+@keyframes ball2 {
+  0% {
+    box-shadow: 30px 0 0 #294c94;
+  }
+  50% {
+    box-shadow: 0 0 0 #294c94;
+    margin-top: -20px;
+    transform: translate(15px, 15px);
+  }
+  100% {
+    box-shadow: 30px 0 0 #294c94;
+    margin-top: 0;
+  }
+}
+
+.tour-loader {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  display: inline-block;
+  position: relative;
+  border: 3px solid;
+  border-color: #294c94 #294c94 transparent;
+  box-sizing: border-box;
+  animation: rotation 1s linear infinite;
+}
+.tour-loader::after {
+  content: '';  
+  box-sizing: border-box;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  border: 3px solid;
+  border-color: transparent #FF3D00 #FF3D00;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  animation: rotationBack 0.5s linear infinite;
+  transform-origin: center center;
+}
+
+@keyframes rotation {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+} 
+    
+@keyframes rotationBack {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(-360deg);
+  }
+}
+    
+.Basis_Calendar .selected_date {
+  background: var(--primary) !important;
+}
+.confirm-date-content button:hover {
+  background: var(--primary);
+}
+.confirm-date-content button {
+  background: var(--primary);
+  color: #fff;
+}
+.calendar-apply-date:hover {
+  background: var(--primary);
+}
+.calendar-apply-date {
+  background: var(--primary);
+  color: #fff;
+}
+.Basis_Calendar .selected_day {
+  background: var(--primary);
+}
+.day.days_available {
+  background: var(--primary);
+}
+.calendar-switch {
+  color: var(--primary);
+}
+.Basis_Calendar .section_next_month,
+.Basis_Calendar .section_prev_month {
+  color: var(--primary);
+}
+.Basis_Calendar .current_day::after {
+  border-color: var(--primary) transparent transparent;
+}
+.Basis_Calendar
+  .month_day_list
+  table
+  td:not(.disable_day, .empty_day, .expire_day):hover {
+  border-color: var(--primary);
+}
+.Basis_Calendar .current_day {
+  background: var(--primary) !important;
+  color: #fff !important;
+}
+.Basis_Calendar_Box {
+  font-family: "Dana" !important;
+  margin-top: -4.75rem;
+}
+.calendar-apply-date,
+.calendar-switch,
+.calendar-today,
+.calendar-footer input::placeholder {
+  font-family: "Dana" !important;
+}
+.calendar-footer input,
+.calendar-footer ::placeholder {
+  font-family: "Dana";
+}
