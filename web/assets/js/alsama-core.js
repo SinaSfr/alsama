@@ -71,16 +71,14 @@ if (window.innerWidth >= 1024) {
   headerMenuClose.addEventListener("click", function () {
     headerMenu.style.visibility = "hidden";
     headerMenu.style.opacity = "0";
-    // headerMenu.style.display = "none";
   });
   bars3.addEventListener("click", function () {
     headerMenu.style.visibility = "visible";
     headerMenu.style.opacity = "1";
-    // headerMenu.style.display = "block";
   });
 } else {
   headerMenuClose.addEventListener("click", function () {
-    headerMenu.style.transform = "translateX(1024px)";
+    headerMenu.style.transform = "translateX(-1024px)";
   });
   bars3.addEventListener("click", function () {
     headerMenu.style.transform = "translateX(0)";
@@ -155,20 +153,56 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 });
 
+    const FetchPageNumPrev = async (dataPageNum) => {
+      const fetchContentArticle = document.querySelector(
+        ".fetch-content-article"
+      );
+      const cmsQuery = fetchContentArticle.getAttribute("data-catid");
+      const pagingResponse = await fetch(
+        `/article-load-items.bc?catid=${cmsQuery}&pagenum=${dataPageNum}`
+      );
+      const pagingData = await pagingResponse.text();
+      fetchContentArticle.innerHTML = pagingData;
+    };
+
+    const FetchPageNumNext = async (dataPageNum) => {
+      const fetchContentArticle = document.querySelector(
+        ".fetch-content-article"
+      );
+      const cmsQuery = fetchContentArticle.getAttribute("data-catid");
+      const pagingResponse = await fetch(
+        `/article-load-items.bc?catid=${cmsQuery}&pagenum=${dataPageNum}`
+      );
+      const pagingData = await pagingResponse.text();
+      fetchContentArticle.innerHTML = pagingData;
+    };
+
+    const FetchWithPageNum = async (dataPageNum) => {
+      const fetchContentArticle = document.querySelector(
+        ".fetch-content-article"
+      );
+      const cmsQuery = fetchContentArticle.getAttribute("data-catid");
+      const pagingResponse = await fetch(
+        `/article-load-items.bc?catid=${cmsQuery}&pagenum=${dataPageNum}`
+      );
+      const pagingData = await pagingResponse.text();
+      fetchContentArticle.innerHTML = pagingData;
+    };
+
 document.addEventListener("DOMContentLoaded", function () {
-  if(document.querySelector(".blue-dropdown")){
+  if (document.querySelector(".blue-dropdown")) {
     const menuButton = document.querySelector(".menu-button");
     const menuDropdown = document.querySelector(".menu-dropdown");
     const blueDropdown = document.querySelector(".blue-dropdown");
-  
+
     menuButton.addEventListener("click", function (event) {
       menuDropdown.classList.toggle("scale-y-0");
       menuDropdown.classList.toggle("scale-y-100");
       blueDropdown.classList.toggle("rotate-180");
-  
+
       event.stopPropagation();
     });
-  
+
     document.addEventListener("click", function (event) {
       if (
         !menuDropdown.contains(event.target) &&
@@ -179,11 +213,11 @@ document.addEventListener("DOMContentLoaded", function () {
         blueDropdown.classList.remove("rotate-180");
       }
     });
-  
+
     const menuItems = menuDropdown.querySelectorAll("li");
     menuItems.forEach(function (item) {
       item.addEventListener("click", function () {
-        event.stopPropagation(); 
+        event.stopPropagation();
         menuButton.querySelector(".new-text").innerHTML = item.innerHTML;
         menuDropdown.classList.add("scale-y-0");
         menuDropdown.classList.remove("scale-y-100");
@@ -191,20 +225,20 @@ document.addEventListener("DOMContentLoaded", function () {
       });
     });
   }
-
 });
 
 document.addEventListener("DOMContentLoaded", function () {
-const textDiv = document.querySelector(".orange-text");
+  const textDiv = document.querySelector(".orange-text");
 
-if (textDiv) {
+  if (textDiv) {
     const words = textDiv.textContent.trim().split(" ");
     if (words.length > 1) {
-        const lastWord = words.pop();
-        textDiv.innerHTML = `${words.join(" ")} <span class="text-orange-500">${lastWord}</span>`;
+      const lastWord = words.pop();
+      textDiv.innerHTML = `${words.join(
+        " "
+      )} <span class="text-orange-500">${lastWord}</span>`;
     }
-}
-
+  }
 });
 
 document.addEventListener("DOMContentLoaded", function () {
@@ -267,7 +301,7 @@ document.addEventListener("DOMContentLoaded", function () {
         if (newText) {
           newText.innerHTML = item.textContent.trim();
         }
-        
+
         async function secondContent() {
           fetchContentTour.innerHTML =
             '<div class="flex justify-center mb-6"><span class="tour-loader"></span></div>';
@@ -283,7 +317,10 @@ document.addEventListener("DOMContentLoaded", function () {
 
             const viewMoreLink = document.querySelector(".view-more");
             if (viewMoreLink) {
-              viewMoreLink.setAttribute("href", `/tour-list.bc?catid=${cmsQuery}`);
+              viewMoreLink.setAttribute(
+                "href",
+                `/tour-list.bc?catid=${cmsQuery}`
+              );
             }
           } catch (error) {
             console.error("Fetch failed:", error);
@@ -298,16 +335,18 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 });
 
-
 document.addEventListener("DOMContentLoaded", function () {
   const fetchContentArticle = document.querySelector(".fetch-content-article");
   const articleLi = document.querySelectorAll(".article-li");
 
   if (fetchContentArticle) {
     async function firstContent() {
-      fetchContentArticle.innerHTML = '<div class="flex justify-center mb-6"><span class="tour-loader"></span></div>';
+      fetchContentArticle.innerHTML =
+        '<div class="flex justify-center mb-6"><span class="tour-loader"></span></div>';
       try {
-        const firstResponse = await fetch("/article-load-items.bc?catid=214233");
+        const firstResponse = await fetch(
+          "/article-load-items.bc?catid=214233"
+        );
         if (!firstResponse.ok) {
           throw new Error(`HTTP error! Status: ${firstResponse.status}`);
         }
@@ -358,7 +397,6 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }
 });
-
 
 function uploadDocumentFooter(args) {
   document.querySelector("#footer-form-resize .Loading_Form").style.display =
@@ -416,138 +454,138 @@ async function RenderFormFooter() {
 }
 
 if (document.querySelector(".swiper-best-hotel")) {
-var swiperBestHotel = new Swiper(".swiper-best-hotel", {
+  var swiperBestHotel = new Swiper(".swiper-best-hotel", {
     slidesPerView: 5,
     speed: 400,
     centeredSlides: false,
     spaceBetween: 12,
     grabCursor: true,
     autoplay: {
-        delay: 2500,
-        disableOnInteraction: false,
+      delay: 2500,
+      disableOnInteraction: false,
     },
     loop: true,
     pagination: {
-        el: ".swiper-pagination",
-        clickable: true,
+      el: ".swiper-pagination",
+      clickable: true,
     },
     navigation: {
-        nextEl: ".swiper-button-next-custom",
-        prevEl: ".swiper-button-prev-custom",
+      nextEl: ".swiper-button-next-custom",
+      prevEl: ".swiper-button-prev-custom",
     },
-});
+  });
 }
 if (document.querySelector(".swiper-popular-destination")) {
-var swiperPopularDestination = new Swiper(".swiper-popular-destination", {
+  var swiperPopularDestination = new Swiper(".swiper-popular-destination", {
     slidesPerView: 4,
     speed: 400,
     centeredSlides: false,
     spaceBetween: 12,
     grabCursor: true,
     autoplay: {
-        delay: 2500,
-        disableOnInteraction: false,
+      delay: 2500,
+      disableOnInteraction: false,
     },
     loop: true,
     pagination: {
-        el: ".swiper-pagination",
-        clickable: true,
+      el: ".swiper-pagination",
+      clickable: true,
     },
     navigation: {
-        nextEl: ".swiper-button-next-custom",
-        prevEl: ".swiper-button-prev-custom",
+      nextEl: ".swiper-button-next-custom",
+      prevEl: ".swiper-button-prev-custom",
     },
-});
+  });
 }
 if (document.querySelector(".swiper-travel-magazine")) {
-var swiperTravelMagazine = new Swiper(".swiper-travel-magazine", {
+  var swiperTravelMagazine = new Swiper(".swiper-travel-magazine", {
     slidesPerView: 1,
     speed: 400,
     centeredSlides: false,
     spaceBetween: 12,
     grabCursor: true,
     autoplay: {
-        delay: 4500,
-        disableOnInteraction: false,
+      delay: 4500,
+      disableOnInteraction: false,
     },
     loop: true,
     pagination: {
-        el: ".swiper-pagination",
-        clickable: true,
+      el: ".swiper-pagination",
+      clickable: true,
     },
     navigation: {
-        nextEl: ".swiper-button-next-custom",
-        prevEl: ".swiper-button-prev-custom",
+      nextEl: ".swiper-button-next-custom",
+      prevEl: ".swiper-button-prev-custom",
     },
-});
+  });
 }
 if (document.querySelector(".swiper-best-hotel-list")) {
-var swiperBestHotelList = new Swiper(".swiper-best-hotel-list", {
+  var swiperBestHotelList = new Swiper(".swiper-best-hotel-list", {
     slidesPerView: 4,
     speed: 400,
     centeredSlides: false,
     spaceBetween: 12,
     grabCursor: true,
     autoplay: {
-        delay: 2500,
-        disableOnInteraction: false,
+      delay: 2500,
+      disableOnInteraction: false,
     },
     loop: true,
     pagination: {
-        el: ".swiper-pagination",
-        clickable: true,
+      el: ".swiper-pagination",
+      clickable: true,
     },
     navigation: {
-        nextEl: ".swiper-button-next-custom",
-        prevEl: ".swiper-button-prev-custom",
+      nextEl: ".swiper-button-next-custom",
+      prevEl: ".swiper-button-prev-custom",
     },
-});
+  });
 }
 if (document.querySelector(".swiper-article-list")) {
-var swiperArticleList = new Swiper(".swiper-article-list", {
-slidesPerView: 1,
-speed: 400,
-centeredSlides: false,
-spaceBetween: 12,
-grabCursor: true,
-autoplay: {
-    delay: 4500,
-    disableOnInteraction: false,
-},
-loop: true,
-pagination: {
-    el: ".swiper-pagination",
-    clickable: true,
-},
-navigation: {
-nextEl: ".swiper-button-next-custom",
-prevEl: ".swiper-button-prev-custom",
-},
-});
+  var swiperArticleList = new Swiper(".swiper-article-list", {
+    slidesPerView: 1,
+    speed: 400,
+    centeredSlides: false,
+    spaceBetween: 12,
+    grabCursor: true,
+    autoplay: {
+      delay: 4500,
+      disableOnInteraction: false,
+    },
+    loop: true,
+    pagination: {
+      el: ".swiper-pagination",
+      clickable: true,
+    },
+    navigation: {
+      nextEl: ".swiper-button-next-custom",
+      prevEl: ".swiper-button-prev-custom",
+    },
+  });
 }
 if (document.querySelector(".swiper-article-list-mobile")) {
   var swiperArticleListMobile = new Swiper(".swiper-article-list-mobile", {
-  slidesPerView: 1,
-  speed: 400,
-  centeredSlides: false,
-  spaceBetween: 12,
-  grabCursor: true,
-  autoplay: {
+    slidesPerView: 1,
+    speed: 400,
+    centeredSlides: false,
+    spaceBetween: 12,
+    grabCursor: true,
+    autoplay: {
       delay: 4500,
       disableOnInteraction: false,
-  },
-  loop: true,
-  pagination: {
+    },
+    loop: true,
+    pagination: {
       el: ".swiper-pagination",
       clickable: true,
-  },
-  navigation: {
-  nextEl: ".swiper-button-next-custom",
-  prevEl: ".swiper-button-prev-custom",
-  },
+    },
+    navigation: {
+      nextEl: ".swiper-button-next-custom",
+      prevEl: ".swiper-button-prev-custom",
+    },
   });
-  }
-  if (document.querySelector(".swiper-best-hotel-mobile")) {
+}
+if (document.querySelector(".swiper-best-hotel-mobile")) {
   var swiperBestHotelMobile = new Swiper(".swiper-best-hotel-mobile", {
     slidesPerView: 1.3,
     speed: 400,
@@ -566,20 +604,23 @@ if (document.querySelector(".swiper-article-list-mobile")) {
   });
 }
 if (document.querySelector(".swiper-travel-magazine-mobile")) {
-  var swiperTravelMagazineMobile = new Swiper(".swiper-travel-magazine-mobile", {
-    slidesPerView: 1,
-    speed: 400,
-    centeredSlides: false,
-    spaceBetween: 12,
-    grabCursor: true,
-    autoplay: {
-      delay: 2500,
-      disableOnInteraction: false,
-    },
-    loop: true,
-    pagination: {
-      el: ".swiper-pagination",
-      clickable: true,
-    },
-  });
+  var swiperTravelMagazineMobile = new Swiper(
+    ".swiper-travel-magazine-mobile",
+    {
+      slidesPerView: 1,
+      speed: 400,
+      centeredSlides: false,
+      spaceBetween: 12,
+      grabCursor: true,
+      autoplay: {
+        delay: 2500,
+        disableOnInteraction: false,
+      },
+      loop: true,
+      pagination: {
+        el: ".swiper-pagination",
+        clickable: true,
+      },
+    }
+  );
 }

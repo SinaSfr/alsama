@@ -112,41 +112,59 @@
                 <div class=" relative py-10 mt-8">
                     <div class="bg-specialcolor-2 absolute inset-0 w-full h-full"></div>
                     <div class="relative z-10 flex flex-col gap-9 mx-auto max-lg:w-[90%] max-xl:w-[97%] xl:max-w-7xl">
-                        <div class="flex items-center gap-2">
-                            <svg width="40" height="40" class="flex-shrink-0">
-                                <use xlink:href="./images/sprite-icons.svg#icon-location-white"></use>
-                            </svg>
-                            <div class="flex flex-col">
-                                <h2 class="text-primary-800 font-medium text-white">Address</h2>
-                                <div class="text-sm text-justify text-primary-50">Office No. 306, Malik Salma Ali Saif
-                                    Bin Harib Al
-                                    Muhairi Building - Al Murar Muraqqabat</div>
-                            </div>
-                        </div>
-                        <a href="tel:" class="flex items-center gap-2">
-                            <svg width="40" height="40" class="flex-shrink-0">
-                                <use xlink:href="./images/sprite-icons.svg#icon-phone-white"></use>
-                            </svg>
-                            <div class="flex flex-col">
-                                <h2 class="text-primary-800 font-medium text-white">Contact Us</h2>
-                                <div
-                                    class="relative group text-primary-50 text-sm text-justify transition-all duration-300 hover:text-primary-600">
-                                    +98556523113
+                        <basis core="print" datamembername="db.info">
+                            <face filter="TypeID in(244)">
+                                <div class="flex items-center gap-2">
+                                    <svg width="40" height="40" class="flex-shrink-0">
+                                        <use xlink:href="./images/sprite-icons.svg#icon-location-white"></use>
+                                    </svg>
+                                    <div class="flex flex-col">
+                                        <h2 class="text-primary-800 font-medium text-white">Address</h2>
+                                        <div class="text-sm text-justify text-primary-50">@largetext</div>
+                                    </div>
                                 </div>
-                            </div>
-                        </a>
-                        <a href="mailto:" class="flex items-center gap-2">
-                            <svg width="40" height="40" class="flex-shrink-0">
-                                <use xlink:href="./images/sprite-icons.svg#icon-email-white"></use>
-                            </svg>
-                            <div class="flex flex-col">
-                                <h2 class="text-primary-800 font-medium text-white">Email</h2>
-                                <div
-                                    class="relative group text-primary-50 text-sm text-justify transition-all duration-300 hover:text-primary-600">
-                                    Sapport@yahoo.com
+                            </face>
+                        </basis>
+
+                        <basis core="print" datamembername="db.info">
+                            <layout>
+                                <div class="flex items-center gap-2">
+                                    <svg width="40" height="40" class="flex-shrink-0">
+                                        <use xlink:href="./images/sprite-icons.svg#icon-phone-white"></use>
+                                    </svg>
+                                    <div class="flex flex-col">
+                                        <h2 class="text-primary-800 font-medium text-white">Contact Us</h2>
+                                        <div class="flex flex-col gap-2">
+                                            @child
+                                        </div>
+                                    </div>
                                 </div>
-                            </div>
-                        </a>
+                            </layout>
+                            <face filter="TypeID in(240)">
+                                <a href="tel:@text"
+                                class="relative group text-primary-50 text-sm text-justify transition-all duration-300 hover:text-primary-600">
+                                @text
+                            </a>
+                            </face>
+                        </basis>
+
+                        <basis core="print" datamembername="db.info">
+                            <face filter="TypeID in(242)">
+                                <a href="mailto:@text" class="flex items-center gap-2">
+                                    <svg width="40" height="40" class="flex-shrink-0">
+                                        <use xlink:href="./images/sprite-icons.svg#icon-email-white"></use>
+                                    </svg>
+                                    <div class="flex flex-col">
+                                        <h2 class="text-primary-800 font-medium text-white">Email</h2>
+                                        <div
+                                            class="relative group text-primary-50 text-sm text-justify transition-all duration-300 hover:text-primary-600">
+                                            @text
+                                        </div>
+                                    </div>
+                                </a>
+                            </face>
+                        </basis>
+
                     </div>
                 </div>
             </div>

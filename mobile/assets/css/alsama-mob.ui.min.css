@@ -280,6 +280,10 @@ body {
   height: 4rem;
 }
 
+.h-\[22px\] {
+  height: 22px;
+}
+
 .h-2 {
   height: 0.5rem;
 }
@@ -1275,4 +1279,10 @@ body {
 .calendar-footer input,
 .calendar-footer ::placeholder {
   font-family: "Dana";
+}
+
+.notification{
+  right: 0.5rem;
+  position: absolute;
+  top: 1.25rem;
 }

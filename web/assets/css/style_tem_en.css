@@ -37,7 +37,7 @@ i[class*=" flaticon-"]:before {
 input,
 select,
 button {
-  font-family: "IRANSansWebEnNum";
+  font-family: inherit;
 }
 .flaticon-phone-call:before {
   content: "\f136";
@@ -121,8 +121,9 @@ fieldset hr {
 }
 .btn-item button,
 .flight-duration-stop:before {
-  background-color: var(--secondary);
-  border: 1px solid var(--secondary);
+  background-color: var(--primary);
+  border: 1px solid var(--primary);
+  font-family: inherit;
 }
 .confirm,
 .details-btn {
@@ -237,9 +238,10 @@ fieldset hr {
 }
 .loading-img img {
   margin: 0 auto;
+  width: 100%;
 }
 .loading-img {
-  margin-top: 0.2em;
+  margin-top: -0.4em;
 }
 .after-btn i {
   padding-right: 0.1em;
@@ -262,10 +264,11 @@ fieldset hr {
 .login-btn,
 .next-btn,
 .select-passnger {
+  font-family: inherit;
   background-color: var(--primary);
 }
 .next-btn:hover {
-  background-color: var(--secondary);
+  background-color: var(--primary);
   color: #fff;
 }
 .prev-passengers {
@@ -276,10 +279,10 @@ fieldset hr {
   fill: var(--primary);
 }
 .prev-passengers:hover {
-  color: var(--secondary) !important;
+  color: var(--primary) !important;
 }
 .prev-passengers:hover svg {
-  fill: var(--secondary);
+  fill: var(--primary);
 }
 .prev-passengers svg {
   display: inline;
@@ -349,7 +352,7 @@ fieldset hr {
 }
 .SecurityCodeLeft span {
   background-color: var(--primary) !important;
-  color: var(--secondary) !important;
+  color: var(--primary) !important;
 }
 .main-topImg-section {
   background-image: url(../images/hotel-view-banner.jpg) !important;
@@ -378,7 +381,7 @@ fieldset hr {
 }
 .replyComment a:hover,
 #OpinionSubmit:hover {
-  background: var(--secondary) !important;
+  background: var(--primary) !important;
 }
 .userIcon {
   border: 4px solid var(--primary);
@@ -390,7 +393,7 @@ fieldset hr {
 .note-content textarea,
 .package-info-item input,
 .package-info-item select {
-  font-family: "IRANSansWebEnNum";
+  font-family: inherit;
 }
 .fa-spoon::before {
   font-weight: normal;
@@ -466,7 +469,7 @@ fieldset hr {
   clear: both;
 }
 .SecurityCodeLeft span:hover {
-  background-color: var(--secondary) !important;
+  background-color: var(--primary) !important;
   color: var(--primary) !important;
 }
 .fa-whatsapp::before {
@@ -502,7 +505,7 @@ fieldset hr {
   display: inline;
 }
 .social-art-footer li i:hover {
-  color: var(--secondary);
+  color: var(--primary);
 }
 .Panel-Dashboard_link::before,
 .Logout_link::before {
@@ -529,8 +532,11 @@ fieldset hr {
 .search_form button:hover {
   background: lightgray;
 }
+.coupon-content{
+  flex-wrap: nowrap;
+}
 .coupon-content input {
-  font-family: "IRANSansWeb";
+  font-family: inherit;
 }
 .fa,
 .fab,
@@ -585,7 +591,7 @@ fieldset hr {
     background-color: var(--primary);
   }
   .background-color_2:hover {
-    background-color: var(--secondary) !important;
+    background-color: var(--primary) !important;
   }
   .Wrapper-logininfo button:hover {
     background-color: var(--primary) !important;
