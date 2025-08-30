@@ -214,14 +214,14 @@
 <path d="M7.94885 3.42705C8.2482 2.50574 9.55161 2.50574 9.85096 3.42705L10.5838 5.68237C10.7176 6.0944 11.1016 6.37336 11.5348 6.37336L13.9062 6.37336C14.8749 6.37336 15.2777 7.61297 14.494 8.18237L12.5755 9.57624C12.225 9.83088 12.0783 10.2822 12.2122 10.6943L12.945 12.9496C13.2444 13.8709 12.1899 14.637 11.4062 14.0676L9.48769 12.6738C9.1372 12.4191 8.6626 12.4191 8.31212 12.6738L6.39362 14.0676C5.60991 14.637 4.55543 13.8709 4.85478 12.9496L5.58758 10.6943C5.72146 10.2822 5.5748 9.83088 5.22431 9.57624L3.30582 8.18237C2.52211 7.61297 2.92488 6.37336 3.8936 6.37336L6.26499 6.37336C6.69822 6.37336 7.08217 6.0944 7.21605 5.68237L7.94885 3.42705Z" fill="#FBBF24"/>
     </symbol>
 
-    <symbol id="engine-departurehotel-icon" viewBox="0 0 8 50" fill="none">
+        <symbol id="engine-departurehotel-icon" viewBox="0 0 8 50" fill="none">
   <line x1="4" y1="8" x2="4" y2="50" stroke="#27272A" stroke-width="2.5"/>
 
   <circle cx="4" cy="4" r="4" fill="#27272A"/>
 
     </symbol>
 
-        <symbol id="engine-close-icon" stroke-width="1.5" viewBox="0 0 24 24" stroke="currentColor" fill="none">
+    <symbol id="engine-close-icon" stroke-width="1.5" viewBox="0 0 24 24" stroke="currentColor" fill="none">
 
   <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
 

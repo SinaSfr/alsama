@@ -1222,7 +1222,12 @@ body {
     transform: rotate(-360deg);
   }
 }
-    
+ 
+
+.Basis_Calendar {
+  font-family: 'Dana' !important;
+}
+
 .Basis_Calendar .selected_date {
   background: var(--primary) !important;
 }
@@ -1286,3 +1291,273 @@ body {
   position: absolute;
   top: 1.25rem;
 }
+
+
+    .search-box-container input,
+    .search-box-container select,
+    .search-box-container button {
+        font-family: 'Dana' !important;
+    }
+
+    .search-nav {
+        display: none;
+    }
+
+    #r-hotel {
+        background-color: white;
+        padding: 16px 8px;
+        border-radius: 8px;
+    }
+
+    #hotelSearch {
+        flex-wrap: wrap;
+        gap: 0px !important;
+    }
+
+    .reserve-field.departure-route label .down-icon,
+    .reserve-field.departure-route p,
+    .reserve-field.departure-date label svg,
+    .reserve-field.departure-date p,
+    .reserve-field.return-date label svg,
+    .reserve-field.return-date p,
+    .label-passengers svg {
+        display: none !important;
+    }
+
+    .reserve-field.departure-date,
+    .reserve-field.return-date {
+        flex: 1;
+    }
+
+    .reserve-field.departure-date>div:first-of-type,
+    .reserve-field.return-date>div:first-of-type,
+    .reserve-field.passengers-field>div:first-of-type {
+        padding: 0 !important;
+    }
+
+    .reserve-field.departure-date,
+    .reserve-field.return-date,
+    .reserve-field.passengers-field {
+        height: 44px !important;
+        margin-top: 24px;
+    }
+
+    .Basis_Date.start_date,
+    .Basis_Date.end_date {
+        padding: 24px 0 0 !important;
+    }
+
+    .reserve-field.departure-route {
+        flex-basis: 100%;
+        height: 56px !important;
+        margin-bottom: 0 !important;
+    }
+
+    .Basis_Date_Box {
+        flex-basis: 50%;
+        gap: 32px !important;
+        margin-right: 24px;
+    }
+
+    .reserve-field.passengers-field {
+        flex-basis: 46%;
+    }
+
+    .departure,
+    .Basis_Date.start_date,
+    .Basis_Date.end_date,
+    .reserve-field.passengers-field div.border-type-1.h-full.rounded-type-1.px-2:first-child div:first-of-type {
+        border-bottom: 1px solid #e4e4e7 !important;
+        outline: none;
+        color: #27272a !important;
+        font-size: 16px !important;
+    }
+
+    .departure {
+        top: 8px !important;
+    }
+
+    .passenger-counts {
+        font-size: 16px !important;
+    }
+
+    .label-passengers {
+        height: 22px !important;
+    }
+
+    .reserve-field.passengers-field div.border-type-1.h-full.rounded-type-1.px-2:first-child div:first-of-type {
+        height: 100%;
+    }
+
+    .departure::placeholder,
+    .Basis_Date.start_date::placeholder,
+    .Basis_Date.end_date::placeholder {
+        color: #27272a;
+    }
+
+    .label-routes .label-text,
+    .label-dates .label-text,
+    .label-passengers .label-text {
+        color: #a1a1aa;
+        font-weight: 500;
+        font-size: 16px !important;
+    }
+
+    .label-routes>svg:first-of-type {
+        width: 8px !important;
+        height: 50px !important;
+        position: absolute;
+        left: -11px;
+    }
+
+    .reserve-search {
+        height: auto !important;
+        margin-top: 24px;
+    }
+
+    .searchList {
+        border-radius: 8px;
+        box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+        left: 0;
+    }
+
+    .ul-list ul li:not(:last-child) {
+        border-bottom: 1px solid var(--primary-50);
+    }
+
+    .ul-list ul li:hover {
+        background-color: var(--primary-900);
+        color: white !important;
+        transition: all 300ms ease;
+    }
+
+    .passengerbox.hidden-box .clr {
+        position: absolute;
+    }
+
+    .second-room-type {
+        display: none !important;
+    }
+
+    .passengerbox.hidden-box {
+        margin: 0 auto;
+        padding: 24px 16px !important;
+        top: 100%;
+        border: 1px solid var(--primary-50);
+        overflow-x: hidden !important;
+        box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+        z-index: 60 !important;
+    }
+
+
+    .close-passenger-box,
+    .close-searchList {
+        margin-bottom: 4rem !important;
+        width: auto !important;
+        height: auto !important;
+    }
+
+
+    .close-passenger-box svg,
+    .close-searchList svg {
+        width: 48px !important;
+        height: 48px !important;
+    }
+
+    .passenger-item ul {
+        height: auto !important;
+        line-height: normal !important;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .passenger-item.adult-passenger-item,
+    .passenger-item.child-passenger-item,
+    .passenger-item.infant-passenger-item,
+    .passenger-item.room-passenger-item,
+    .passengerbox.hidden-box .passenger-item {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .minus-count,
+    .plus-count {
+        width: auto !important;
+        height: auto !important;
+        line-height: normal !important;
+    }
+
+    .minus-count div,
+    .plus-count div {
+        width: 24px !important;
+        height: 24px !important;
+        background: var(--primary-900);
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        border-radius: 4px;
+    }
+
+    .plus-count span,
+    .minus-count span {
+        color: #fff;
+        font-size: 24px !important;
+        padding-top: 0.25rem;
+    }
+
+    .confirm-passenger {
+        position: relative;
+        z-index: 10;
+        display: flex !important;
+        align-items: center;
+        justify-content: center;
+        margin-top: 24px;
+        background-color: var(--primary-900);
+        color: white;
+        border-radius: 8px;
+        font-weight: 800;
+        height: 40px !important;
+        transition: all 300ms ease;
+    }
+
+    .confirm-passenger:hover {
+        color: white !important;
+    }
+
+    .search-hotel {
+        position: relative;
+        z-index: 10;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        width: 100% !important;
+        height: 3.5rem !important;
+        margin-top: 0rem !important;
+        font-size: 0.875rem;
+        color: #fff;
+        border-radius: 0.5rem;
+        background-color: var(--primary-800) !important;
+        overflow: hidden;
+    }
+
+    .search-hotel svg {
+        display: none;
+    }
+
+    .search-hotel::after,
+    .confirm-passenger::after {
+        content: '';
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(270deg, #ff3535 3.33%, #cf1919 100%);
+        border-radius: 0.5rem;
+        opacity: 0;
+        transition: opacity 0.3s ease-in-out;
+        z-index: -1;
+    }
+
+    .search-hotel:hover::after,
+    .confirm-passenger:hover::after {
+        opacity: 1;
+    }

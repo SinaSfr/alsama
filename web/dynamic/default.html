@@ -25,15 +25,15 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
+    <meta charset="UTF-8" />
 
-    <meta name="viewport" content="width=device-width, initial-scale=1.0,shrink-to-fit=no,viewport-fit=cover">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0,shrink-to-fit=no,viewport-fit=cover" />
 
     <!-- Title & Description -->
 
     <title>hotel booking | online booking | Alsama Tourism</title>
 
-    <meta name="description" content="Experience the best hotels and the easiest online booking with Alsama Toursim">
+    <meta name="description" content="Experience the best hotels and the easiest online booking with Alsama Toursim" />
 
     <!-- canonical for Homepage -->
 
@@ -41,39 +41,42 @@
 
     <!-- fill items with Agancy Info -->
 
-    <meta name="og:locale" content="en_US">
+    <meta name="og:locale" content="en_US" />
 
-    <meta property="og:title" content="hotel booking | online booking | Alsama Tourism ">
+    <meta property="og:title" content="hotel booking | online booking | Alsama Tourism " />
 
-    <meta property="og:url" content="[##cms.request.:scheme##]://[##cms.request.full-url##]">
+    <meta property="og:url" content="[##cms.request.:scheme##]://[##cms.request.full-url##]" />
 
-    <meta property="og:type" content="website">
+    <meta property="og:type" content="website" />
 
-    <meta property="og:site_name" content="Alsama Tourism ">
+    <meta property="og:site_name" content="Alsama Tourism " />
 
-    <meta property="og:image" content="http://www.by2click.com/images/custom_image_1200x630.png">
+    <meta property="og:image"
+        content="[##cms.request.:scheme##]://[##cms.request.full-url##]/images/custom_image_1200x630.png" />
 
-    <meta property="og:image:alt" content=" Alsama Tourism logo">
+    <meta property="og:image:alt" content=" Alsama Tourism logo" />
 
-    <meta property="og:description" content="hotel booking | online hotel booking | hotel reservation | Alsama Toursim">
+    <meta property="og:description"
+        content="hotel booking | online hotel booking | hotel reservation | Alsama Toursim" />
 
-    <meta property="og:image:height" content="630">
+    <meta property="og:image:height" content="630" />
 
-    <meta property="og:image:width" content="1200">
+    <meta property="og:image:width" content="1200" />
 
-    <meta property="og:image:type" content="image/png">
+    <meta property="og:image:type" content="image/png" />
 
-    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:card" content="summary_large_image" />
 
-    <meta name="twitter:site" content=" ">
+    <meta name="twitter:site" content=" " />
 
-    <meta name="twitter:creator" content="Alsama Tourism">
+    <meta name="twitter:creator" content="Alsama Tourism" />
 
-    <meta name="twitter:image" content="http://www.by2click.com/images/custom_image_1200x630.png">
+    <meta name="twitter:image"
+        content="[##cms.request.:scheme##]://[##cms.request.full-url##]/images/custom_image_1200x630.png" />
 
-    <meta name="twitter:title" content=" ">
+    <meta name="twitter:title" content=" " />
 
-    <meta name="twitter:description" content=" ">
+    <meta name="twitter:description" content=" " />
 
     <meta property="seo:robots" content="index, follow" />
 
@@ -89,18 +92,16 @@
 
     <!-- define -->
 
-    <link rel="preload" as="image" imageSrcSet="image address" fetchpriority="high" />
+    <link rel="preload" as="image" imagesrcset="image address" fetchpriority="high" />
 
     <!-- common styles for all page -->
 
-    <link rel="stylesheet" href="https://cdn.basiscore.net/basisfly.com/css/swiper-bundle.min.css">
-    <link href="https://cdn.basiscore.net/basisfly.com/css/reservation_tem_calendar_en.css" type="text/css"
-        rel="stylesheet" />
-    <basis core="call" file="style.inc" lid="2" />
+    <link rel="stylesheet" href="https://cdn.basiscore.net/basisfly.com/css/swiper-bundle.min.css" />
 
+    <basis core="call" file="style.inc" lid="2" />
 </head>
 
-<body onload="loadContentHomePage()">
+<body>
     <basis core="call" file="header.inc" lid="2" />
     <main>
         <section class="relative bg-defaultBg bg-cover py-36">
@@ -114,29 +115,27 @@
                             <layout>
                                 <div
                                     class="text-white text-sm rounded-lg self-start bg-[linear-gradient(270deg,_#FF3535_3.33%,_#CF1919_100%)] flex justify-center p-2 mt-14">
-                                    @child
-                                </div>
+                                    @child</div>
                             </layout>
                             <face filter="TypeID in(129)">
                                 <span>@largetext</span>
                             </face>
                         </basis>
-
                     </div>
                     <!-- search engine  -->
                     <div class="flex-[1.33]">
-                        <section id="search-box"
-                            class="load-search-box-in-condition hotel-search-engine search-box-container en">
-                            <div class="relative z-10 flex justify-center w-full mt-24 mb-24 text-center loading">
-                                <span class="search-engine-loader"></span>
+                        <div class="search-banner">
+                            <div class="search-box-container en">
+                                <div id="search-box" class="dir-ltr">
+                                    <div class="flex justify-center mt-16"><span class="search-engine-loader"></span>
+                                    </div>
+                                </div>
                             </div>
-                        </section>
+                        </div>
                     </div>
                     <!-- search engine  -->
                 </div>
             </div>
-
-
         </section>
         <section class="mx-auto max-lg:w-[90%] max-xl:w-[97%] xl:max-w-7xl mt-20">
             <div class="flex items-center justify-between">
@@ -149,7 +148,7 @@
                         <h3 class="text-zinc-900 text-sm">Best hotel discounts</h3>
                     </div>
                 </div>
-                <div class="flex items-center gap-2 mb-9 ">
+                <div class="flex items-center gap-2 mb-9">
                     <div
                         class="group swiper-button-prev-custom w-12 h-12 rounded-full bg-zinc-300 flex items-center justify-center transition-all duration-300 hover:bg-primary-900">
                         <svg width="24" height="24"
@@ -163,7 +162,6 @@
                     </div>
                     <div
                         class="group swiper-button-next-custom w-12 h-12 rounded-full bg-zinc-300 flex items-center justify-center transition-all duration-300 hover:bg-primary-900">
-
                         <svg width="24" height="24"
                             class="transition-all duration-300 group-hover:hidden group-hover:invisible group-hover:opacity-0">
                             <use xlink:href="./images/sprite-icons.svg#icon-chevron-right-zinc"></use>
@@ -197,7 +195,7 @@
                                     @prp_3087651
                                 </span>
                                 <img src="@00246X00278prp" class="h-[278px] object-cover" alt="@title" width="100%"
-                                    height="278" loading="lazy">
+                                    height="278" loading="lazy" />
                                 <svg preserveAspectRatio="none" width="226" height="138"
                                     class="absolute bottom-0 z-10 w-full">
                                     <use xlink:href="./images/sprite-icons.svg#icon-black-shadow"></use>
@@ -243,7 +241,7 @@
                                     @prp_3087651
                                 </span>
                                 <img src="@00246X00278prp" class="h-[278px] object-cover" alt="@title" width="100%"
-                                    height="278" loading="lazy">
+                                    height="278" loading="lazy" />
                                 <svg preserveAspectRatio="none" width="226" height="138"
                                     class="absolute bottom-0 z-10 w-full">
                                     <use xlink:href="./images/sprite-icons.svg#icon-black-shadow"></use>
@@ -280,7 +278,6 @@
                     </face>
                 </basis>
 
-
                 <!-- If we need pagination -->
                 <div class="swiper-pagination"></div>
             </div>
@@ -289,9 +286,7 @@
         <section class="mx-auto max-lg:w-[90%] max-xl:w-[97%] xl:max-w-7xl mt-24">
             <basis core="print" datamembername="db.slogan-list">
                 <layout>
-                    <div class="flex gap-20">
-                        @child
-                    </div>
+                    <div class="flex gap-20">@child</div>
                 </layout>
                 <face filter="valueID in(4134418)">
                     <div class="flex flex-col items-center">
@@ -330,7 +325,6 @@
                     </div>
                 </face>
             </basis>
-
         </section>
         <section class="mx-auto max-lg:w-[90%] max-xl:w-[97%] xl:max-w-7xl mt-20">
             <div class="flex items-center justify-between">
@@ -343,7 +337,7 @@
                         <h3 class="text-zinc-900 text-sm">Best hotel discounts</h3>
                     </div>
                 </div>
-                <div class="flex items-center gap-2 mb-9 ">
+                <div class="flex items-center gap-2 mb-9">
                     <div
                         class="group swiper-button-prev-custom w-12 h-12 rounded-full bg-zinc-300 flex items-center justify-center transition-all duration-300 hover:bg-primary-900">
                         <svg width="24" height="24"
@@ -357,7 +351,6 @@
                     </div>
                     <div
                         class="group swiper-button-next-custom w-12 h-12 rounded-full bg-zinc-300 flex items-center justify-center transition-all duration-300 hover:bg-primary-900">
-
                         <svg width="24" height="24"
                             class="transition-all duration-300 group-hover:hidden group-hover:invisible group-hover:opacity-0">
                             <use xlink:href="./images/sprite-icons.svg#icon-chevron-right-zinc"></use>
@@ -388,7 +381,7 @@
                                     class="bg-specialcolor-3 absolute inset-0 w-full h-full group-hover:opacity-0 transition-all duration-300">
                                 </div>
                                 <img src="@image" class="h-60 object-cover" alt="@title" width="100%" height="236"
-                                    loading="lazy">
+                                    loading="lazy" />
                                 <div class="absolute inset-0 mx-auto w-[90%] top-4">
                                     <div
                                         class="hidden text-white text-sm text-center rounded-[38px] py-1 w-20 bg-[linear-gradient(270deg,_#FF3535_3.33%,_#CF1919_100%)]">
@@ -420,7 +413,7 @@
                                     class="bg-specialcolor-3 absolute inset-0 w-full h-full group-hover:opacity-0 transition-all duration-300">
                                 </div>
                                 <img src="@image" class="h-60 object-cover" alt="@title" width="100%" height="236"
-                                    loading="lazy">
+                                    loading="lazy" />
                                 <div class="absolute inset-0 mx-auto w-[90%] top-4">
                                     <div
                                         class="hidden text-white text-sm text-center rounded-[38px] py-1 w-20 bg-[linear-gradient(270deg,_#FF3535_3.33%,_#CF1919_100%)]">
@@ -468,19 +461,15 @@
                             nullvalue="214205">
                             <layout>
                                 <ul
-                                    class="absolute left-0 z-40 w-full top-12 
-                                bg-white shadow-lg transition-all duration-300 transform scale-y-0 origin-top menu-dropdown">
+                                    class="absolute left-0 z-40 w-full top-12 bg-white shadow-lg transition-all duration-300 transform scale-y-0 origin-top menu-dropdown">
                                     @child
                                 </ul>
                             </layout>
                             <face>
                                 <li class="tour-li text-zinc-500 cursor-pointer px-4 py-2 transition-all duration-300 hover:bg-primary-800 hover:text-white"
-                                    data-id="@catid">
-                                    @title
-                                </li>
+                                    data-id="@catid">@title</li>
                             </face>
                         </basis>
-
                     </div>
                 </div>
                 <basis core="tree" datamembername="tour-list.cat" idcol="catid" parentidcol="parentid"
@@ -492,29 +481,22 @@
                     </layout>
                     <face>
                         <li class="tour-li rounded-[50px] cursor-pointer bg-white py-2 px-5 text-zinc-500 text-sm transition-all duration-300 hover:bg-primary-800 hover:text-white"
-                            data-id="@catid">
-                            @title
-                        </li>
+                            data-id="@catid">@title</li>
                     </face>
                 </basis>
 
-                <div class="fetch-content-tour">
-
-                </div>
+                <div class="fetch-content-tour"></div>
             </div>
         </section>
-
 
         <section class="flex mx-auto max-lg:w-[90%] max-xl:w-[97%] xl:max-w-7xl mt-24 rounded-3xl overflow-hidden">
             <div class="relative flex-[2.62]">
                 <div class="bg-specialcolor-1 absolute inset-0 w-full h-full"></div>
                 <img src="[##cms.cms.cdn##]/images/offer.jpg" class="h-[370px] object-cover" alt="" width="100%"
-                    height="370" loading="lazy">
+                    height="370" loading="lazy" />
                 <basis core="print" datamembername="db.banner">
                     <layout>
-                        <div class="absolute top-12 left-14">
-                            @child
-                        </div>
+                        <div class="absolute top-12 left-14">@child</div>
                     </layout>
                     <face filter="TypeID in(150)">
                         <h2 class="text-[64px] leading-[64px] text-white w-[626px] orange-text">@text</h2>
@@ -524,22 +506,20 @@
             <div class="bg-zinc-100 px-9 py-10 flex-1">
                 <div class="flex flex-col">
                     <img src="[##cms.cms.cdn##]/images/main-logo.png" class="self-end h-11 object-cover" alt="banner"
-                        width="87" height="43">
+                        width="87" height="43" />
                     <basis core="print" datamembername="db.banner">
                         <face filter="TypeID in(129)">
-                            <div class="font-bold text-3xl text-zinc-900 mt-14 line-clamp-3">@largetext
-                            </div>
+                            <div class="font-bold text-3xl text-zinc-900 mt-14 line-clamp-3">@largetext</div>
                         </face>
                     </basis>
                     <a href=""
-                        class="relative group z-10 flex items-center justify-center bg-primary-800 w-full h-14 text-white rounded-lg mt-7">View
-                        More
+                        class="relative group z-10 flex items-center justify-center bg-primary-800 w-full h-14 text-white rounded-lg mt-7">
+                        View More
                         <div
                             class="absolute inset-0 bg-[linear-gradient(270deg,_#FF3535_3.33%,_#CF1919_100%)] opacity-0 transition-opacity duration-300 group-hover:opacity-100 rounded-lg -z-10">
                         </div>
                     </a>
                 </div>
-
             </div>
         </section>
 
@@ -547,12 +527,13 @@
             <div class="flex items-center justify-between">
                 <div>
                     <h2 class="font-bold text-zinc-900 text-xl">Travel magazine</h2>
-                    <a href="/blog" class="relative group text-sm text-blue-600">View All blog
+                    <a href="/blog" class="relative group text-sm text-blue-600">
+                        View All blog
                         <span
                             class="absolute -bottom-1 left-0 w-0 transition-all duration-300 h-px bg-primary-500 group-hover:w-full"></span>
                     </a>
                 </div>
-                <div class="flex items-center gap-2 mb-9 ">
+                <div class="flex items-center gap-2 mb-9">
                     <div
                         class="group swiper-button-prev-custom w-12 h-12 rounded-full bg-zinc-300 flex items-center justify-center transition-all duration-300 hover:bg-primary-900">
                         <svg width="24" height="24"
@@ -566,7 +547,6 @@
                     </div>
                     <div
                         class="group swiper-button-next-custom w-12 h-12 rounded-full bg-zinc-300 flex items-center justify-center transition-all duration-300 hover:bg-primary-900">
-
                         <svg width="24" height="24"
                             class="transition-all duration-300 group-hover:hidden group-hover:invisible group-hover:opacity-0">
                             <use xlink:href="./images/sprite-icons.svg#icon-chevron-right-zinc"></use>
@@ -594,7 +574,7 @@
                                 <div class="flex-1">
                                     <img src="@00567X00345prp"
                                         class="h-[345px] object-cover rounded-xl transition-all duration-300 group-hover:sepia"
-                                        alt="@title" width="100%" height="345" loading="lazy">
+                                        alt="@title" width="100%" height="345" loading="lazy" />
                                 </div>
                                 <div class="flex flex-col gap-3 flex-[1.17]">
                                     <h2 class="text-zinc-900 font-bold text-2xl">@title</h2>
@@ -616,8 +596,8 @@
                                         </span>
                                     </div>
                                     <a href="/article.bc?id=@id"
-                                        class="relative group/leveltwo z-10 flex items-center justify-center bg-primary-800 rounded-lg text-white font-medium py-4 w-36">Read
-                                        More
+                                        class="relative group/leveltwo z-10 flex items-center justify-center bg-primary-800 rounded-lg text-white font-medium py-4 w-36">
+                                        Read More
                                         <div
                                             class="absolute inset-0 bg-[linear-gradient(270deg,_#FF3535_3.33%,_#CF1919_100%)] opacity-0 transition-opacity duration-300 group-hover/leveltwo:opacity-100 rounded-lg -z-10">
                                         </div>
@@ -632,7 +612,7 @@
                                 <div class="flex-1">
                                     <img src="@00567X00345prp"
                                         class="h-[345px] object-cover rounded-xl transition-all duration-300 group-hover:sepia"
-                                        alt="@title" width="100%" height="345" loading="lazy">
+                                        alt="@title" width="100%" height="345" loading="lazy" />
                                 </div>
                                 <div class="flex flex-col gap-3 flex-[1.17]">
                                     <h2 class="text-zinc-900 font-bold text-2xl">@title</h2>
@@ -654,8 +634,8 @@
                                         </span>
                                     </div>
                                     <a href="@link"
-                                        class="relative group/leveltwo z-10 flex items-center justify-center bg-primary-800 rounded-lg text-white font-medium py-4 w-36">Read
-                                        More
+                                        class="relative group/leveltwo z-10 flex items-center justify-center bg-primary-800 rounded-lg text-white font-medium py-4 w-36">
+                                        Read More
                                         <div
                                             class="absolute inset-0 bg-[linear-gradient(270deg,_#FF3535_3.33%,_#CF1919_100%)] opacity-0 transition-opacity duration-300 group-hover/leveltwo:opacity-100 rounded-lg -z-10">
                                         </div>
@@ -666,7 +646,6 @@
                     </face>
                 </basis>
 
-
                 <!-- If we need pagination -->
                 <div class="swiper-pagination"></div>
             </div>
@@ -674,27 +653,18 @@
 
         <basis core="print" datamembername="db.our-history">
             <layout>
-                <section class="mx-auto max-lg:w-[90%] max-xl:w-[97%] xl:max-w-7xl my-24">
-                    @child
-                </section>
+                <section class="mx-auto max-lg:w-[90%] max-xl:w-[97%] xl:max-w-7xl my-24">@child</section>
             </layout>
             <face>
                 <h2 class="text-xl font-bold text-zinc-900 mb-3">@text</h2>
-                <div class="text-zinc-900 text-sm text-justify">
-                    @largetext
-                </div>
+                <div class="text-zinc-900 text-sm text-justify">@largetext</div>
             </face>
         </basis>
-
-
     </main>
 
-    <script src="https://cdn.basiscore.net/_js/jquery/jquery-3.7.1.min.js" type="text/javascript"></script>
     <!-- -END CSS & JS CODE FOR SEARCH HISTORY -->
     <script src="https://cdn.basiscore.net/basisfly.com/js/swiper-bundle.min.js"></script>
     <basis core="call" file="footer.inc" lid="2" />
-
-
 </body>
 
 </html>
